@@ -14,6 +14,7 @@
     <link href="app/css/slick.css" rel="stylesheet">
     <link href="app/css/tooltipster.bundle.css" rel="stylesheet">
     <link href="app/css/select2.css" rel="stylesheet">
+    <link href="app/css/datepicker.min.css" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="app/main.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/favicon.png"/>
@@ -147,21 +148,24 @@
                         <div class="add-form__item">
                             <input type="text" name="topic-ticket" placeholder="Введите тему обращения">
                         </div>
-                        <div class="add-form__item">
-                            <label class="form-label">
+                        <div class="add-form__item add-form__item_select2">
+                            <label class="form-label form-label_for-category" for="category">
                                 Категория обращения:
                             </label>
-                            <select class="custom-select" name="category-ticket">
-                                <option>
-                                    Добавить информацию на сайт
-                                </option>
-                                <option>
-                                    Добавить информацию на сайт
-                                </option>
-                            </select>
-                            <div class="custom-checkbox">
+                            <div class="custom-select-wrapper custom-select-wrapper_mar-bottom">
+                                <select class="custom-select" name="category-ticket" id="category">
+                                    <option></option>
+                                    <option>
+                                        Добавить информацию на сайт
+                                    </option>
+                                    <option>
+                                        Добавить информацию на сайт
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="custom-checkbox custom-checkbox_right-float">
                                 <input type="checkbox" name="need-help" id="need-help-checkbox">
-                                <label for="need-help-checkbox">
+                                <label class="form-label" for="need-help-checkbox">
                                     Нужна помощь с выбором категории
                                 </label>
                             </div>
@@ -169,37 +173,39 @@
                         <div class="add-form__item">
                             <textarea placeholder="Введите текст обращения:" name="ticket-text"></textarea>
                         </div>
-                        <div class="add-form__item">
-                            <div class="form-label">
-                                Прикрепить файлы:
-                            </div>
+                        <div class="add-form__item add-form__item_with-margin">
                             <div class="custom-input-file">
-                                <label class="custom-input-file__label">
-                                    <input multiple type="file" name="additional-file">
-                                    Прикрепить файл
+                                <input multiple type="file" name="additional-file" id="additional-file-input">
+                                <label class="custom-input-file__label" for="additional-file-input">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 53 53" style="enable-background:new 0 0 53 53;" xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M45.707,10.074l-9.794-9.782C35.726,0.105,35.471,0,35.206,0H8C7.447,0,7,0.447,7,1v51c0,0.553,0.447,1,1,1h37    c0.553,0,1-0.447,1-1V10.782C46,10.517,45.895,10.263,45.707,10.074z M42.586,10H36V3.414L42.586,10z M9,51V2h25v9    c0,0.553,0.447,1,1,1h9v39H9z"/>
+                                                <path d="M40.5,39H35v-6c0-0.553-0.447-1-1-1s-1,0.447-1,1v6h-6c-0.553,0-1,0.447-1,1s0.447,1,1,1h6v6c0,0.553,0.447,1,1,1    s1-0.447,1-1v-6h5.5c0.553,0,1-0.447,1-1S41.053,39,40.5,39z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    Прикрепить файлы
                                 </label>
                             </div>
                             <div class="list-add-files">
-                                файл не выбран
+                                файлы не выбраны
                             </div>
                         </div>
                         <div class="add-form__item">
-                            <label class="form-label">
+                            <label class="form-label form-label__datapicker">
                                 Желаемая дата выполнения задачи:
-                            </label>
-                            <input type="text">
-                        </div>
-                        <div class="add-form__item">
-                            <label class="form-label">
-                                Добавить статус обращению:
-                                <select placeholder="Нет статуса" name="status-select">
-                                    <option></option>
-                                    <option></option>
-                                    <option></option>
-                                    <option></option>
-                                    <option></option>
-                                    <option></option>
-                                </select>
+                                <input type="text" class="datepicker-here add-form__datapicker" name="desired-date">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <path d="M362.667,42.667h-21.333V0h-42.667v42.667H128V0H85.333v42.667H64c-23.573,0-42.453,19.093-42.453,42.667L21.333,384     c0,23.573,19.093,42.667,42.667,42.667h298.667c23.573,0,42.667-19.093,42.667-42.667V85.333     C405.333,61.76,386.24,42.667,362.667,42.667z M362.667,384H64V149.333h298.667V384z"/>
+                                                <polygon points="309.973,214.613 287.36,192 183.253,296.107 138.027,250.88 115.413,273.493 183.253,341.333    "/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
                             </label>
                         </div>
                         <button class="button button-green button-small">Создать новое обращение</button>
@@ -290,6 +296,7 @@
 <script src="app/js/jquery.sticky.js"></script>
 <script src="app/js/jquery.mask.min.js"></script>
 <script src="app/js/select2.min.js"></script>
+<script src="app/js/datepicker.min.js"></script>
 <script src="app/js/main.js"></script>
 </body>
 </html>

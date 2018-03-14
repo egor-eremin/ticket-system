@@ -88,5 +88,23 @@ function addTabs(tabbed_selector) {
     });
 })();
 (function createCustomSelect() {
-    $('.custom-select').select2();
+    $('.custom-select').select2({
+        placeholder: "Выберите категорию",
+        allowClear: true,
+        dropdownParent:$('.custom-select-wrapper'),
+    });
+})();
+(function editPathFile() {
+    $(".custom-input-file input").change(function(e){
+        var fileName = '';
+        $('.list-add-files').empty();
+        if( this.files && this.files.length >= 1 )
+            fileName = 'число файлов - ' + this.files.length;
+         else
+            fileName = e.target.value.split( '\\' ).pop();
+        if( fileName )
+        {$('.list-add-files').append(fileName);} else {
+            $('.list-add-files').text('файл не выбран');
+        }
+    });
 })();

@@ -72,7 +72,9 @@ function addTabs(tabbed_selector) {
     panels[0].hidden = false;
 };
 (function addCommentTabs() {
-    addTabs('.tabbed');
+    if ($('div').is('.ticket-body__footer')) {
+        addTabs('.tabbed');
+    }
 })();
 (function addPop_upOtherMenu() {
     $('.comments__other').on('click', function () {
@@ -84,4 +86,7 @@ function addTabs(tabbed_selector) {
             $('.comments__other').removeClass('open-popup');
         }
     });
+})();
+(function createCustomSelect() {
+    $('.custom-select').select2();
 })();

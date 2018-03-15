@@ -108,3 +108,21 @@ function addTabs(tabbed_selector) {
         }
     });
 })();
+(function validateAddForm() {
+    $(".add-form").validate({
+    });
+    jQuery.extend(jQuery.validator.messages, {
+        required: "Это поле необходимо заполнить",
+    });
+})();
+(function addAnimationHelp() {
+    $('.help-item, .help-arrow').viewportChecker({
+        classToAdd:'fadeIn animation-help',
+        classToRemove: 'hide',
+    });
+})();
+(function createCustomDatepicker() {
+    $('.add-form__datapicker').datepicker({
+        minDate: new Date(),
+    });
+})();

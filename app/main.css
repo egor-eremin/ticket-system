@@ -1503,6 +1503,7 @@ body > * {
 .help-text {
     font-weight: 700;
     margin-bottom: 24px;
+    position: relative;
 }
 .form-block {
     padding-: 15px;
@@ -1722,4 +1723,109 @@ body > * {
 }
 .form-label__datapicker path, .form-label__datapicker polygon {
     fill: rgb(124, 124, 124);
+}
+.datepicker--nav-title i {
+    transition: .3s ease-in-out;
+}
+.datepicker--nav-title {
+    font-weight: 700;
+    color: #25272a;
+    transition: .3s ease-in-out;
+}
+.datepicker--nav-title:hover {
+    background-color: #70ccf1;
+    color: #fff;
+}
+.datepicker--nav-title:hover i {
+    color: #fff;
+}
+.datepicker--cell-day {
+    transition: .3s ease-in-out;
+}
+.datepicker--cell-day.-focus- {
+    background-color: #70ccf1;
+    color: #fff !important;
+}
+.datepicker--day-name {
+    color: #70ccf1;
+    font-weight: 700;
+}
+.datepicker--nav-action path {
+    transition: .3s ease-in-out;
+}
+.datepicker--nav-action {
+    transition: .3s ease-in-out;
+}
+.datepicker--nav-action:hover {
+    background-color: #70ccf1;
+}
+.datepicker--nav-action:hover path {
+    stroke: #fff;
+}
+.datepicker {
+    border-radius: 0;
+}
+.add-form__item label.error {
+    color: red;
+    margin-left: auto;
+    margin-top: 6px;
+}
+.add-form__item input.error, .add-form__item textarea.error {
+    border-color: red;
+}
+.help-arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: -48px;
+    margin-top: -13px;
+}
+.help {
+    margin-top: 43px;
+    margin-left: 71px;
+}
+.help-item {
+    background-color: #eefafa;
+    font-size: 13px;
+    font-weight: 300;
+    font-style: italic;
+    color: #59686b;
+    line-height: 17px;
+    padding: 16px 19px;
+    margin-bottom: 23px;
+    position: relative;
+}
+.help-item::before {
+    content: '';
+    display: block;
+    border: 10px solid transparent;
+    border-right: 10px solid #eefafa;
+    border-bottom: 10px solid #eefafa;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(2, 1);
+    margin-left: -30px;
+}
+.animation-help {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+}
+.animation-delay {
+    animation-delay: 1s;
+}
+.animation-delay1 {
+    animation-delay: 1.5s;
+}
+.animation-delay2 {
+    animation-delay: 2s;
+}
+.animation-delay3 {
+    animation-delay: 2.5s;
+}
+.animation-delay4 {
+    animation-delay: 3s;
+}
+.hide {
+    opacity: 0;
 }

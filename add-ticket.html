@@ -5,8 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=1280">
     <title>MegaMirIt Тикетная система</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto+Slab:300,400,700&amp;subset=cyrillic"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700|Roboto+Slab:300,400,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="app/css/animate.css" rel="stylesheet">
     <link href="app/css/magnific-popup.css" rel="stylesheet">
     <link href="app/css/font-awesome.min.css" rel="stylesheet">
@@ -142,11 +141,12 @@
             <div class="col-6">
                 <div class="help-text">
                     Пользуйтесь подсказками при создании обращения
+                    <img class="help-arrow animation-delay hide" src="images/help-arrow.png" alt="воспользуйтесь подсказками">
                 </div>
                 <div class="form-block">
                     <form action="#" class="add-form" method="post" enctype="multipart/form-data">
                         <div class="add-form__item">
-                            <input type="text" name="topic-ticket" placeholder="Введите тему обращения">
+                            <input type="text" name="topic-ticket" required placeholder="Введите тему обращения">
                         </div>
                         <div class="add-form__item add-form__item_select2">
                             <label class="form-label form-label_for-category" for="category">
@@ -171,7 +171,7 @@
                             </div>
                         </div>
                         <div class="add-form__item">
-                            <textarea placeholder="Введите текст обращения:" name="ticket-text"></textarea>
+                            <textarea required placeholder="Введите текст обращения:" name="ticket-text"></textarea>
                         </div>
                         <div class="add-form__item add-form__item_with-margin">
                             <div class="custom-input-file">
@@ -195,7 +195,7 @@
                         <div class="add-form__item">
                             <label class="form-label form-label__datapicker">
                                 Желаемая дата выполнения задачи:
-                                <input type="text" class="datepicker-here add-form__datapicker" name="desired-date">
+                                <input type="text" class="add-form__datapicker" name="desired-date">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
                                     <g>
                                         <g>
@@ -212,7 +212,22 @@
                     </form>
                 </div>
             </div>
-            <div class="col-6"></div>
+            <div class="col-6">
+                <div class="help">
+                    <div class="help-item animation-delay1 hide">
+                        Введите тему обращения так, чтобы Вы смогли по ней узнать это обращение в общем списке
+                    </div>
+                    <div class="help-item animation-delay2 hide">
+                        Выберите в выпадающем списке категорию обращения. Благодаря этому Вашей задачей займется наиболее компетентный в ней специалист.
+                    </div>
+                    <div class="help-item animation-delay3 hide">
+                        Если у Вас возникла сложность с выбором категории, установите галочку "Нужна помощь с выбором категории". В этом случае менеджер службы поддержки по описанию назначит задачу на нужного специалиста. При этом время обработки обращения будет немного больше, чем если Вы самостоятельно определите категорию.
+                    </div>
+                    <div class="help-item animation-delay4 hide">
+                        Опишите Ваше обращение как можно подробнее. Чем подробнее Вы опишите Вашу задачу, тем меньше вопросов возникнет перед её выплонением, тем быстрее специалист к ней приступит.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </main>

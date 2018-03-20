@@ -143,36 +143,27 @@
                 <div class="general-information__wrapper">
                     <div class="general-information__head">
                         <div class="general-information__title">
-                            <span>Flyboots</span>
-                            <button class="general-information__title-edit">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 528.899 528.899" style="enable-background:new 0 0 528.899 528.899;" xml:space="preserve">
-                                <g>
-                                    <path d="M328.883,89.125l107.59,107.589l-272.34,272.34L56.604,361.465L328.883,89.125z M518.113,63.177l-47.981-47.981   c-18.543-18.543-48.653-18.543-67.259,0l-45.961,45.961l107.59,107.59l53.611-53.611   C532.495,100.753,532.495,77.559,518.113,63.177z M0.3,512.69c-1.958,8.812,5.998,16.708,14.811,14.565l119.891-29.069   L27.473,390.597L0.3,512.69z" fill="#cdcdcd"/>
-                                </g>
-                            </svg>
-                            </button>
+                            Flyboots
                         </div>
                         <a href="https://flyboots.ru/" target="_blank" class="blue-link general-information__address">flyboots.ru</a>
                     </div>
                     <div class="general-information__body">
                         <div class="general-information__item">
                             <p>
-                                <b>Тариф:</b> 3 300 руб./мес.
+                                <b>Тариф:</b> <span class="general-information__tariff">3 300 руб./мес.</span>.
                                 <a href="#" class="blue-link contract-link">Договор №ОС-63 от "01" сентября 2017 г.</a>
                             </p>
                             <div class="custom-checkbox custom-checkbox_client-card">
-                                <input type="checkbox" name="need-help" id="online-consultant">
-                                <label for="online-consultant">Онлайн консультант</label>
+                                <span class="check-status checked" data-id="online-consultant">Онлайн консультант</span>
                             </div>
                             <div class="custom-checkbox custom-checkbox_client-card">
-                                <input type="checkbox" name="need-help" id="sms-notice">
-                                <label for="sms-notice">SMS-уведомления</label>
+                                <span class="check-status not-checked" data-id="sms-notice">SMS-уведомления</span>
                             </div>
-                            <p>E-mail для рассылки: <a href="mailto:privet@flyboots.ru" class="blue-link">privet@flyboots.ru</a>
+                            <p>E-mail для рассылки: <a href="mailto:privet@flyboots.ru" class="blue-link general-information__email">privet@flyboots.ru</a>
                             </p>
                             <textarea class="general-information__notes" readonly>Отправлять акты почтой России</textarea>
                             <div class="general-information__buttons">
-                                <button class="button button-green button-small">Редактировать</button>
+                                <button class="button button-green button-small button-edit-information">Редактировать</button>
                                 <button class="button button-red button-small">Удалить</button>
                             </div>
                         </div>
@@ -181,9 +172,63 @@
                             <p>по тарифу - 35 мин.</p>
                             <p>доработки - 2 ч.</p>
                             <div class="custom-checkbox custom-checkbox_client-card">
-                                <input type="checkbox" name="need-help" id="block-debt">
-                                <label for="block-debt">Блокировать при задолженности</label>
+                                <span class="check-status not-checked" data-id="block-debt">Блокировать при задолженности</span>
                             </div>
+                        </div>
+                        <div class="edit-information modal-popup mfp-hide">
+                            <div class="modal-popup__title">Редактировать данные клиента</div>
+                            <form action="#" class="edit-information__form popup-form">
+                                <div class="form-item">
+                                    <label for="client-name" class="form-label form-label_popup-form">Клиент</label>
+                                    <input required type="text" placeholder="Введите название клиента" name="client__name" id="client-name">
+                                </div>
+                                <div class="form-item">
+                                    <label for="client-site" class="form-label form-label_popup-form">Сайт</label>
+                                    <input type="text" placeholder="Введите сайт клиента" name="client__site" id="client-site">
+                                </div>
+                                <div class="form-item">
+                                    <label for="client-tariff" class="form-label form-label_popup-form">Тариф</label>
+                                    <div class="custom-select-wrapper">
+                                        <select name="client__tariff" id="client-tariff" class="edit-information__select">
+                                            <option></option>
+                                            <option>3 300 руб./мес.</option>
+                                            <option>3 333 руб./мес.</option>
+                                            <option>3 999 руб./мес.</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label for="client-email" class="form-label form-label_popup-form">E-mail для рассылки</label>
+                                    <input type="text" placeholder="Введите e-mail для рассылки" data-rule-email="true" name="client__email" id="client-email">
+                                </div>
+                                <div class="form-item">
+                                    <label for="client-notes" class="form-label form-label_popup-form">Примечания</label>
+                                    <textarea name="client__notes" placeholder="Примечания по клиенту" id="client-notes"></textarea>
+                                </div>
+                                <div class="form-item custom-checkbox">
+                                    <input type="checkbox" name="online__consultant" id="online-consultant">
+                                    <label class="form-label" for="online-consultant">
+                                        Онлайн консультант
+                                    </label>
+                                </div>
+                                <div class="form-item custom-checkbox">
+                                    <input type="checkbox" name="sms__notice" id="sms-notice">
+                                    <label class="form-label" for="sms-notice">
+                                        SMS-уведомления
+                                    </label>
+                                </div>
+                                <div class="form-item custom-checkbox">
+                                    <input type="checkbox" name="block__debt" id="block-debt">
+                                    <label class="form-label" for="block-debt">
+                                        Блокировать при задолженности
+                                    </label>
+                                </div>
+                                <div class="edit-information__button">
+                                    <button type="submit" class="button button-green button-small">
+                                        Сохранить информацию
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -191,6 +236,233 @@
                     <i class="fas fa-long-arrow-alt-left"></i>
                     К списку
                 </a>
+            </div>
+            <div class="tabbed client-card__tabs">
+                <ul class="client-card__tabs-list">
+                    <li class="client-card__tabs-item">
+                        <a href="#section1">
+                            Обращения 120
+                        </a>
+                    </li>
+                    <li class="client-card__tabs-item">
+                        <a href="#section2">
+                            Обслуживание
+                        </a>
+                    </li>
+                    <li class="client-card__tabs-item">
+                        <a href="#section3">
+                            Доработка
+                        </a>
+                    </li>
+                    <li class="client-card__tabs-item">
+                        <a href="#section4">
+                            Ответственные лица
+                        </a>
+                    </li>
+                    <li class="client-card__tabs-item">
+                        <a href="#section5">
+                            Реквизиты
+                        </a>
+                    </li>
+                    <li class="client-card__tabs-item">
+                        <a href="#section6">
+                            Доступы
+                        </a>
+                    </li>
+                    <li class="client-card__tabs-item">
+                        <a href="#section7">
+                            История
+                        </a>
+                    </li>
+                </ul>
+                <section id="section1" class="client-card__tab-section">
+                    1
+                </section>
+                <section id="section2" class="client-card__tab-section">
+                    2
+                </section>
+                <section id="section3" class="client-card__tab-section">
+                    3
+                </section>
+                <section id="section4" class="client-card__tab-section client-card__tab-section_no-padding">
+                    <div class="responsible section-wrapper">
+                        <table class="responsible-table">
+                            <tr>
+                                <th>
+                                    Ф.И.О.
+                                </th>
+                                <th>
+                                    Мобильный телефон
+                                </th>
+                                <th>
+                                    E-mail
+                                </th>
+                                <th>
+                                    Должность
+                                </th>
+                                <th>
+                                    Основной
+                                </th>
+                                <th>
+                                    Последняя авторизация
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Вартанян Эдуард Каренович
+                                </td>
+                                <td>
+                                    <a class="blue-link" href="tel:89501245898">
+                                        +7 (950) 124-58-98
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="blue-link" href="mailto:vartanyan@mmit.ru">vartanyan@mmit.ru</a>
+                                </td>
+                                <td>
+                                    Директор
+                                </td>
+                                <td>
+                                    <div class="custom-checkbox ">
+                                        <input type="checkbox" name="need-help" id="need-help-checkbox">
+                                        <label class="form-label" for="need-help-checkbox">
+
+                                        </label>
+                                    </div>
+                                    <!--<div class="custom-checkbox responsible-table_custom-checkbox">-->
+                                        <!--<label>-->
+                                            <!--<input type="checkbox">-->
+                                        <!--</label>-->
+                                    <!--</div>-->
+                                </td>
+                                <td>
+                                    27.12.2017 12:56
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Вартанян Эдуард Каренович
+                                </td>
+                                <td>
+                                    <a class="blue-link" href="tel:89501245898">
+                                        +7 (950) 124-58-98
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="blue-link" href="mailto:vartanyan@mmit.ru">vartanyan@mmit.ru</a>
+                                </td>
+                                <td>
+                                    Директор
+                                </td>
+                                <td>
+                                    <div class="custom-checkbox ">
+                                        <input type="checkbox" name="need-help" id="need-help-checkbox">
+                                        <label class="form-label" for="need-help-checkbox">
+
+                                        </label>
+                                    </div>
+                                    <!--<div class="custom-checkbox responsible-table_custom-checkbox">-->
+                                        <!--<label>-->
+                                            <!--<input type="checkbox">-->
+                                        <!--</label>-->
+                                    <!--</div>-->
+                                </td>
+                                <td>
+                                    27.12.2017 12:56
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <section id="section5" class="client-card__tab-section">
+                    <div class="requisites section-wrapper">
+                        <form action="#" class="requisites__form">
+                            <div class="requisites__form-item">
+                                <label><span>Юридическое название:</span><input type="text"></label>
+                            </div>
+                            <div class="requisites__form-item">
+                                <label><span>ИНН:</span><input type="text"></label>
+                            </div>
+                            <div class="requisites__form-item">
+                                <label><span>Юридический адрес:</span><input type="text"></label>
+                            </div>
+                            <div class="requisites__form-item">
+                                <label><span>Почтовый адрес:</span><input type="text"></label>
+                            </div>
+                            <div class="requisites__save-button">
+                                <button class="button button-green button-small">Сохранить</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <section id="section6" class="client-card__tab-section">
+                    <div class="accesses section-wrapper">
+                        <form action="#" class="accesses__form">
+                            <div class="col-6">
+                                <div class="accesses__title">
+                                    Админ-панель
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label><span>URL:</span><input type="text"></label>
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label><span>Логин:</span><input type="text"></label>
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label><span>Пароль:</span><input type="text"></label>
+                                </div>
+                                <div class="accesses__title">
+                                    Хостинг
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label>URL:<input type="text"></label>
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label>Логин:<input type="text"></label>
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label>Пароль:<input type="text"></label>
+                                </div>
+                                <div class="accesses__title">
+                                    FTP
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label>URL:<input type="text"></label>
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label>Логин:<input type="text"></label>
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label>Пароль:<input type="text"></label>
+                                </div>
+                                <div class="accesses__title">
+                                    База данных
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label>URL:<input type="text"></label>
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label>Логин:<input type="text"></label>
+                                </div>
+                                <div class="accesses__form-item">
+                                    <label>Пароль:<input type="text"></label>
+                                </div>
+                             </div>
+                            <div class="col-6">
+                                <div class="accesses__title">
+                                    Другие доступы
+                                </div>
+                                <textarea class="accesses__textarea"></textarea>
+                            </div>
+                            <div class="accesses__save-button">
+                                <button class="button button-green button-small">Сохранить</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <section id="section7" class="client-card__tab-section">
+                    7
+                </section>
             </div>
         </div>
     </div>

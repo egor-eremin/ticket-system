@@ -76,6 +76,11 @@ function addTabs(tabbed_selector) {
         addTabs('.tabbed');
     }
 })();
+(function createClientCardTabs() {
+    if ($('div').is('.client-card__tabs')) {
+        addTabs('.tabbed');
+    }
+})();
 (function addPop_upOtherMenu() {
     $('.comments__other').on('click', function () {
        $(this).toggleClass('open-popup');
@@ -88,12 +93,19 @@ function addTabs(tabbed_selector) {
     });
 })();
 (function createCustomSelect() {
-    $('.custom-select').select2({
-        placeholder: "Выберите категорию",
-        allowClear: true,
-        dropdownParent:$('.custom-select-wrapper'),
-    });
+    CustomSelect('.custom-select',"Выберите категорию",'.custom-select-wrapper');
+    CustomSelect('.edit-information__select',"Выберите тариф",'.custom-select-wrapper');
+    CustomSelect('.responsible-select',"Ответственный",'.responsible-select-wrapper');
+    CustomSelect('.tester-select',"Тестировщик",'.tester-select-wrapper');
+    CustomSelect('.director-select',"Постановщик",'.director-select-wrapper');
 })();
+function CustomSelect(main_selector,select_placeholder,dr_parent) {
+    $(main_selector).select2({
+        placeholder: select_placeholder,
+        allowClear: true,
+        dropdownParent:$(dr_parent),
+    });
+}
 (function editPathFile() {
     $(".custom-input-file input").change(function(e){
         var fileName = '';
@@ -113,6 +125,13 @@ function addTabs(tabbed_selector) {
     });
     jQuery.extend(jQuery.validator.messages, {
         required: "Это поле необходимо заполнить",
+        email:'Введите корректный E-mail',
+    });
+})();
+(function validateEditInformationForm() {
+    var nameClientEmail = $('#client-email').attr('name');
+    console.log(nameClientEmail);
+    $('.edit-information__form').validate({
     });
 })();
 (function addAnimationHelp() {
@@ -124,5 +143,43 @@ function addTabs(tabbed_selector) {
 (function createCustomDatepicker() {
     $('.add-form__datapicker').datepicker({
         minDate: new Date(),
+    });
+})();
+(function createsEditInformation() {
+    $('.button-edit-information').magnificPopup({
+        items: {
+            src: '.edit-information',
+            type: 'inline',
+        },
+        tClose: 'Закрыть',
+        callbacks: {
+            open: function() {
+              var clientName = $.trim($('.general-information__title').text()),
+                  clientSite = $.trim($('.general-information__address').text()),
+                  clientEmail = $.trim($('.general-information__email').text()),
+                  clientNotes = $.trim($('.general-information__notes').text()),
+                  clientTariff = $.trim($('.general-information__tariff').text());
+              $('#client-name').val(clientName);
+              $('#client-site').val(clientSite);
+              $('#client-email').val(clientEmail);
+              $('#client-notes').val(clientNotes);
+              $('#client-tariff option').each(function () {
+                  var textOption = $(this).val();
+                 if (clientTariff == textOption) {
+                     $('#client-tariff option').prop('selected',false);
+                     $(this).prop('selected',true);
+                     CustomSelect('.edit-information__select',"Выберите тариф",'.custom-select-wrapper');
+                 }
+              });
+              $('.check-status').each(function () {
+                var idCheckbox = $(this).data("id");
+                    if ($(this).hasClass('checked')) {
+                        $('#' + idCheckbox).prop('checked', true);
+                    } else {
+                        $('#' + idCheckbox).prop('checked', false);
+                    }
+              })
+            },
+        }
     });
 })();

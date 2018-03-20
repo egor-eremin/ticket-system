@@ -130,7 +130,6 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
 })();
 (function validateEditInformationForm() {
     var nameClientEmail = $('#client-email').attr('name');
-    console.log(nameClientEmail);
     $('.edit-information__form').validate({
     });
 })();
@@ -182,4 +181,19 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             },
         }
     });
+})();
+(function changeResponsibleCheckbox() {
+    $('.responsible-table_custom-checkbox input').change(function () {
+        if ($(this).prop('checked')) {
+            $(this).parent().addClass('checked')
+        } else {
+            $(this).parent().removeClass('checked')
+        }
+    });
+    $('.responsible-table_custom-checkbox input').focus(function () {
+        $(this).parent().addClass('focus');
+    });
+    $('.responsible-table_custom-checkbox input').blur(function () {
+        $(this).parent().removeClass('focus');
+    })
 })();

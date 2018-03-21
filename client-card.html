@@ -269,17 +269,101 @@
                             Доступы
                         </a>
                     </li>
-                    <li class="client-card__tabs-item">
-                        <a href="#section7">
-                            История
-                        </a>
-                    </li>
+                    <!--<li class="client-card__tabs-item">-->
+                        <!--<a href="#section7">-->
+                            <!--История-->
+                        <!--</a>-->
+                    <!--</li>-->
                 </ul>
                 <section id="section1" class="client-card__tab-section">
                     1
                 </section>
-                <section id="section2" class="client-card__tab-section">
-                    2
+                <section id="section2" class="client-card__tab-section client-card__tab-section_no-padding">
+                    <div class="service">
+                        <table class="service__table">
+                            <tr>
+                                <th>
+                                    Месяц
+                                </th>
+                                <th>
+                                    Обслуживание
+                                </th>
+                                <th>
+                                    Онлайн-консультант
+                                </th>
+                                <th>
+                                    SMS
+                                </th>
+                                <th>
+                                    Количество вирусных атак
+                                </th>
+                                <th>
+                                    Оплата домена
+                                </th>
+                                <th>
+                                    Итого: <span>23 760 руб.</span>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="service__cell-wrapper service__cell-wrapper_column">
+                                        Январь 2018
+                                        <a href="#" class="blue-link blue-link_mar-top">отчёт</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="service__cell-wrapper">
+                                        <div class="amount amount_service amount_unpaid">
+                                            <span class="amount__number amount__number_service">900 руб.</span>
+                                            <div class="amount__links">
+                                                <a href="#" class="blue-link">счёт</a>
+                                                <a href="#" class="blue-link">акт</a>
+                                            </div>
+                                        </div>
+                                        <div class="custom-checkbox custom-checkbox_finalization custom-checkbox_ver2">
+                                            <label class="">
+                                                <input type="checkbox">
+                                                оплачено
+                                            </label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="service__cell-wrapper">
+                                        <div class="amount amount_service amount_unpaid">
+                                            <span class="amount__number amount__number_service">900 руб.</span>
+                                        </div>
+                                        <div class="custom-checkbox custom-checkbox_finalization custom-checkbox_ver2">
+                                            <label class="">
+                                                <input type="checkbox" checked>
+                                                оплачено
+                                            </label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="service__cell-wrapper">
+                                        <div class="amount amount_service amount_unpaid">
+                                            <span class="amount__number amount__number_service">900 руб. (<span class="quantity-sms">100</span> SMS)</span>
+                                            <div class="amount__links">
+                                                <a href="#" class="blue-link edit-sms">изменить</a>
+                                                <a href="#" class="blue-link save-sms">сохранить</a>
+                                            </div>
+                                        </div>
+                                        <div class="custom-checkbox custom-checkbox_finalization custom-checkbox_ver2">
+                                            <label class="">
+                                                <input type="checkbox">
+                                                оплачено
+                                            </label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
                 </section>
                 <section id="section3" class="client-card__tab-section client-card__tab-section_no-padding">
                     <div class="finalization">
@@ -297,22 +381,98 @@
                                 <div class="finalization__empty-cell finalization__cell"></div>
                             </div>
                             <form action="#" class="finalization__table-row finalization__table-row-add">
-                                <div class="finalization__date finalization__cell finalization__cell-add">
-                                    <input type="text">
-                                </div>
+                                <label class="finalization__date finalization__cell finalization__cell-add">
+                                    <input placeholder="Введите дату" readonly class="custom-datpicker finalization__datapicker" type="text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <path d="M362.667,42.667h-21.333V0h-42.667v42.667H128V0H85.333v42.667H64c-23.573,0-42.453,19.093-42.453,42.667L21.333,384     c0,23.573,19.093,42.667,42.667,42.667h298.667c23.573,0,42.667-19.093,42.667-42.667V85.333     C405.333,61.76,386.24,42.667,362.667,42.667z M362.667,384H64V149.333h298.667V384z"></path>
+                                                <polygon points="309.973,214.613 287.36,192 183.253,296.107 138.027,250.88 115.413,273.493 183.253,341.333    "></polygon>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                </label>
                                 <div class="finalization__quantitty finalization__cell finalization__cell-add">
-                                    <input type="text">
+                                    <input class="hour-input" type="text">
+                                    <span>ч.</span>
+                                    <input class="minutes-input" type="text">
+                                    <span>мин.</span>
                                 </div>
                                 <div class="finalization__amount finalization__cell finalization__cell-add">
-                                    <div class="custom-checkbox">
-                                        <input type="checkbox" name="online__consultant" id="online-consultant">
-                                        <label for="online-consultant">
-
+                                    <div class="custom-checkbox custom-checkbox_finalization custom-checkbox_ver2">
+                                        <label>
+                                            <input type="checkbox">
+                                            оплачено
                                         </label>
                                     </div>
+                                    <button class="button button-green button-small button-edit-cell" type="submit">Добавить</button>
                                 </div>
                                 <div class="finalization__empty-cell"></div>
                             </form>
+                            <div class="finalization__table-row">
+                                <div class="finalization__date finalization__cell">
+                                    27.12.2017
+                                </div>
+                                <div class="finalization__quantitty finalization__cell">
+                                    27.12.2017
+                                </div>
+                                <div class="finalization__amount finalization__cell">
+                                    <div class="amount amount_unpaid">
+                                        <span class="amount__number">900 руб.</span>
+                                        <a href="#" class="blue-link">счёт</a>
+                                        <a href="#" class="blue-link">акт</a>
+                                    </div>
+                                    <div class="custom-checkbox custom-checkbox_finalization custom-checkbox_ver2">
+                                        <label class="">
+                                            <input type="checkbox">
+                                            оплачено
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="finalization__empty-cell finalization__cell"></div>
+                            </div>
+                            <div class="finalization__table-row">
+                                <div class="finalization__date finalization__cell">
+                                    27.12.2017
+                                </div>
+                                <div class="finalization__quantitty finalization__cell">
+                                    27.12.2017
+                                </div>
+                                <div class="finalization__amount finalization__cell">
+                                    <div class="amount">
+                                        <span class="amount__number">900 руб.</span>
+                                    </div>
+                                    <div class="custom-checkbox custom-checkbox_finalization custom-checkbox_ver2">
+                                        <label class="">
+                                            <input type="checkbox">
+                                            оплачено
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="finalization__empty-cell finalization__cell"></div>
+                            </div>
+                            <div class="finalization__table-row">
+                                <div class="finalization__date finalization__cell">
+                                    27.12.2017
+                                </div>
+                                <div class="finalization__quantitty finalization__cell">
+                                    27.12.2017
+                                </div>
+                                <div class="finalization__amount finalization__cell">
+                                    <div class="amount">
+                                        <span class="amount__number">900 руб.</span>
+                                    </div>
+                                    <div class="custom-checkbox custom-checkbox_finalization custom-checkbox_ver2">
+                                        <label class="">
+                                            <input type="checkbox">
+                                            оплачено
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="finalization__empty-cell finalization__cell"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -480,9 +640,9 @@
                         </form>
                     </div>
                 </section>
-                <section id="section7" class="client-card__tab-section">
-                    7
-                </section>
+                <!--<section id="section7" class="client-card__tab-section">-->
+                    <!--7-->
+                <!--</section>-->
             </div>
         </div>
     </div>

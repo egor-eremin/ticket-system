@@ -140,7 +140,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
     });
 })();
 (function createCustomDatepicker() {
-    $('.add-form__datapicker').datepicker({
+    $('.add-form__datapicker, .custom-datpicker').datepicker({
         minDate: new Date(),
     });
 })();
@@ -183,17 +183,62 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
     });
 })();
 (function changeResponsibleCheckbox() {
-    $('.responsible-table_custom-checkbox input').change(function () {
+    $('.responsible-table_custom-checkbox input, .custom-checkbox_ver2 input').change(function () {
         if ($(this).prop('checked')) {
             $(this).parent().addClass('checked')
         } else {
             $(this).parent().removeClass('checked')
         }
     });
-    $('.responsible-table_custom-checkbox input').focus(function () {
+    $('.responsible-table_custom-checkbox input, .custom-checkbox_ver2 input').each(function () {
+        if ($(this).prop('checked')) {
+            $(this).parent().addClass('checked')
+        } else {
+            $(this).parent().removeClass('checked')
+        }
+    });
+    $('.responsible-table_custom-checkbox input, .custom-checkbox_ver2 input').focus(function () {
         $(this).parent().addClass('focus');
     });
-    $('.responsible-table_custom-checkbox input').blur(function () {
+    $('.responsible-table_custom-checkbox input, .custom-checkbox_ver2 input').blur(function () {
         $(this).parent().removeClass('focus');
     })
+})();
+(function addMakOnHourInput() {
+    $('.hour-input').mask("a#", {
+        "#": {pattern: "^[0-9]+$"},
+        translation: {
+            'a': {
+                pattern: "[1-9]",
+            }
+        }
+    });
+})();
+(function addMakOnMinutesInput() {
+    $('.minutes-input').mask("ab", {
+        translation: {
+            'a': {
+                pattern: "[1-9]",
+            },
+            'b': {
+                pattern: "[0-9]?",
+            }
+        }
+    });
+})();
+(function swithPaindInput() {
+    $('.amount + .custom-checkbox input').each(function () {
+        if ($(this).prop('checked')) {
+            $(this).parents('.custom-checkbox').siblings('.amount').removeClass('amount_unpaid');
+        } else {
+            $(this).parents('.custom-checkbox').siblings('.amount').addClass('amount_unpaid');
+        }
+    });
+    $('.amount + .custom-checkbox input').change(function () {
+        if ($(this).prop('checked')) {
+            $(this).parents('.custom-checkbox').siblings('.amount').removeClass('amount_unpaid');
+        } else {
+            $(this).parents('.custom-checkbox').siblings('.amount').addClass('amount_unpaid');
+        }
+    });
 })();

@@ -1719,11 +1719,12 @@ body > * {
 .add-form__item .add-form__datapicker {
     width: 145px;
     margin-left: 15px;
+    padding-right: 36px;
 }
 .form-label__datapicker {
     position: relative;
 }
-.form-label__datapicker svg {
+.form-label__datapicker svg, .finalization__date.finalization__cell-add svg {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -1991,6 +1992,7 @@ body > * {
 }
 .client-card__tabs {
     margin-top: 59px;
+    margin-bottom: 150px;
 }
 .client-card__tabs-item + .client-card__tabs-item {
     margin-left: 5px;
@@ -2061,18 +2063,18 @@ body > * {
     text-align: center;
     width: 100%;
 }
-.responsible-table {
+.responsible-table, .service__table  {
     font-size: 12px;
     border-collapse: collapse;
     width: 100%;
 }
-.responsible-table th {
+.responsible-table th, .service__table th {
     font-size: 13px;
     font-weight: 600;
     padding: 20px 12px;
     text-align: center;
 }
-.responsible-table td {
+.responsible-table td, .service__table td {
     border-top: 1px solid #e8e8e8;
     padding: 20px 12px;
     text-align: center;
@@ -2080,7 +2082,7 @@ body > * {
 .client-card__tab-section_no-padding {
     padding: 0;
 }
-.responsible-table_custom-checkbox label {
+.responsible-table_custom-checkbox label, .custom-checkbox_ver2 label {
     position: static;
     padding-left: 0;
     width: 15px;
@@ -2088,9 +2090,23 @@ body > * {
     outline: 1px solid rgba(46, 198, 247, 0);
     transition: outline .3s ease-in-out;
 }
-.responsible-table_custom-checkbox label::before, .responsible-table_custom-checkbox label::after {
+.custom-checkbox_ver2 label {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: auto;
+}
+.responsible-table_custom-checkbox label::before, .responsible-table_custom-checkbox label::after,
+.custom-checkbox_ver2 label::before, .custom-checkbox_ver2 label::after {
     position: static;
     transform: none;
+    flex-shrink: 0;
+}
+.custom-checkbox_ver2 label::after {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .responsible-table_custom-checkbox {
     display: flex;
@@ -2100,12 +2116,14 @@ body > * {
 .responsible-table_custom-checkbox label::after {
     transform: translateY(-100%);
 }
-.responsible-table_custom-checkbox label.checked::after {
+.responsible-table_custom-checkbox label.checked::after,
+.custom-checkbox_ver2 label.checked::after {
     color: #fff;
     background-color: #8cc63f;
     border-color: #8cc63f;
 }
-.responsible-table_custom-checkbox label.focus {
+.responsible-table_custom-checkbox label.focus,
+.custom-checkbox_ver2 label.focus {
     outline: 1px solid rgba(46, 198, 247, 0.33);
 }
 .finalization__table-row {
@@ -2114,14 +2132,13 @@ body > * {
 .finalization__table {
     font-size: 12px;
 }
-.finalization__cell {
-    padding: 15px 30px;
-}
 .finalization__date, .finalization__quantitty {
-    width: 200px;
+    width: 230px;
 }
 .finalization__amount {
     width: 400px;
+    display: flex;
+    align-items: center;
 }
 .finalization__empty-cell {
     flex-grow: 1;
@@ -2131,4 +2148,89 @@ body > * {
 }
 .finalization__cell {
     border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    position: relative;
+}
+.custom-checkbox_finalization label::before {
+    margin-right: 16px;
+}
+.button-edit-cell {
+    margin-left: 33px;
+}
+.finalization__date.finalization__cell-add input, .finalization__quantitty.finalization__cell-add input {
+    height: 30px;
+    border: 1px solid #dadbdb;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.finalization__quantitty.finalization__cell-add span {
+    margin-left: 5px;
+}
+.finalization__quantitty.finalization__cell-add span:first-of-type {
+    margin-right: 20px;
+}
+.finalization__quantitty.finalization__cell-add input {
+    width: 40px;
+}
+.finalization__datapicker {
+    width: 100%;
+    padding-right: 26px !important;
+}
+.finalization__date.finalization__cell-add svg {
+    width: 15px;
+    height: 15px;
+    right: 37px;
+}
+.finalization__date.finalization__cell-add path, .finalization__date.finalization__cell-add polygon {
+    fill: rgb(124, 124, 124);
+}
+.amount_unpaid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.amount a {
+    margin-top: 2px;
+}
+.amount a + a {
+    margin-left: 14px;
+}
+.amount .amount__number {
+    color: #7fb439;
+    width: 100%;
+}
+.amount_unpaid .amount__number {
+    color: #ff6464;
+}
+.amount {
+    width: 121px;
+}
+.service__cell-wrapper {
+    display: flex;
+}
+.service__cell-wrapper:not(.service__cell-wrapper_column) {
+    align-items: center;
+}
+.service__cell-wrapper_column {
+    flex-direction: column;
+}
+.service__table th {
+    text-align: left;
+}
+.service__table td {
+    text-align: left;
+}
+.blue-link_mar-top {
+    margin-top: 2px;
+}
+.amount_service, .amount .amount__number_service {
+    width: auto;
+}
+.amount_service {
+    flex-direction: column;
+    margin-right: 26px;
+}
+.amount__links {
+    display: flex;
 }

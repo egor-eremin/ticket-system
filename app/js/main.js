@@ -183,24 +183,23 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
     });
 })();
 (function changeResponsibleCheckbox() {
-    $('.responsible-table_custom-checkbox input, .custom-checkbox_ver2 input').change(function () {
-        if ($(this).prop('checked')) {
-            $(this).parent().addClass('checked')
-        } else {
-            $(this).parent().removeClass('checked')
-        }
+    $('.switch-checkbox').change(function () {
+        changeCheckbox(this);
     });
-    $('.responsible-table_custom-checkbox input, .custom-checkbox_ver2 input').each(function () {
-        if ($(this).prop('checked')) {
-            $(this).parent().addClass('checked')
-        } else {
-            $(this).parent().removeClass('checked')
-        }
+    $('.switch-checkbox').each(function () {
+        changeCheckbox(this);
     });
-    $('.responsible-table_custom-checkbox input, .custom-checkbox_ver2 input').focus(function () {
+    function changeCheckbox(thisSelect) {
+        if ($(thisSelect).prop('checked')) {
+            $(thisSelect).parent().addClass('checked')
+        } else {
+            $(thisSelect).parent().removeClass('checked')
+        }
+    }
+    $('.switch-checkbox').focus(function () {
         $(this).parent().addClass('focus');
     });
-    $('.responsible-table_custom-checkbox input, .custom-checkbox_ver2 input').blur(function () {
+    $('.switch-checkbox').blur(function () {
         $(this).parent().removeClass('focus');
     })
 })();
@@ -228,17 +227,60 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
 })();
 (function swithPaindInput() {
     $('.amount + .custom-checkbox input').each(function () {
-        if ($(this).prop('checked')) {
-            $(this).parents('.custom-checkbox').siblings('.amount').removeClass('amount_unpaid');
-        } else {
-            $(this).parents('.custom-checkbox').siblings('.amount').addClass('amount_unpaid');
-        }
+        switchColorAmount(this)
     });
     $('.amount + .custom-checkbox input').change(function () {
-        if ($(this).prop('checked')) {
-            $(this).parents('.custom-checkbox').siblings('.amount').removeClass('amount_unpaid');
-        } else {
-            $(this).parents('.custom-checkbox').siblings('.amount').addClass('amount_unpaid');
-        }
+        switchColorAmount(this)
     });
+    function switchColorAmount(thisSelect) {
+        if ($(thisSelect).prop('checked')) {
+            $(thisSelect).parents('.custom-checkbox').siblings('.amount').removeClass('amount_unpaid');
+        } else {
+            $(thisSelect).parents('.custom-checkbox').siblings('.amount').addClass('amount_unpaid');
+        }
+    }
+})();
+(function editField() {
+    $('.input-editing').hide();
+    $('.save-button').hide();
+    $('.input-editing').mask("#", {
+        "#": {pattern: "^[0-9]+$"},
+    });
+    $('.edit-button').on('click', function (e) {
+        var editContentElement = $(this).parents('.service__cell-edit').find('.edit-content');
+        var inputEditingElement = $(this).parents('.service__cell-edit').find('.input-editing');
+        var saveButtonElement = $(this).siblings('.save-button');
+        var contentWidth = editContentElement.width();
+        var editContent = editContentElement.text();
+         e.preventDefault();
+         editContentElement.hide();
+         inputEditingElement.css({'display':'inline-block'});
+         inputEditingElement.width(contentWidth);
+         inputEditingElement.val(editContent);
+         inputEditingElement.focus();
+         $(this).hide();
+        saveButtonElement.show().addClass('active');
+
+    });
+    $('.save-button.active').on('click', function (e) {
+       var changeInputElement = $(this).parents('.service__cell-edit').find('.input-editing');
+       var changeContentElement = $(this).parents('.service__cell-edit').find('.edit');
+       var editButtonElemnt = $(this).siblings('.edit-button');
+       e.preventDefault();
+        changeInputElement.hide();
+        changeContentElement.css('display','inline-block');
+        changeContentElement.text(changeContentElement.val());
+        editButtonElemnt.css('display','inline-block');
+        $(this).hide();
+    });
+
+    // $('.input-editing').on('input',function () {
+    //     var inputBuffer = $(this).siblings('.input-buffer');
+    //     var inputBufferWidth = inputBuffer.width();
+    //     console.log(inputBufferWidth);
+    //     if (inputBufferWidth < 100) {
+    //         inputBuffer.text($(this).val());
+    //         $(this).width(inputBufferWidth);
+    //     }
+    // })
 })();

@@ -1665,6 +1665,7 @@ body > * {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid transparent;
 }
 .custom-checkbox input:checked + label::after {
     color: #fff;
@@ -2082,7 +2083,7 @@ body > * {
 .client-card__tab-section_no-padding {
     padding: 0;
 }
-.responsible-table_custom-checkbox label, .custom-checkbox_ver2 label {
+.responsible-table_custom-checkbox label, .custom-checkbox_ver2 label, .custom-checkbox_without-label label {
     position: static;
     padding-left: 0;
     width: 15px;
@@ -2097,7 +2098,8 @@ body > * {
     width: auto;
 }
 .responsible-table_custom-checkbox label::before, .responsible-table_custom-checkbox label::after,
-.custom-checkbox_ver2 label::before, .custom-checkbox_ver2 label::after {
+.custom-checkbox_ver2 label::before, .custom-checkbox_ver2 label::after, .custom-checkbox_without-label label::after,
+.custom-checkbox_without-label label::before {
     position: static;
     transform: none;
     flex-shrink: 0;
@@ -2108,22 +2110,22 @@ body > * {
     top: 50%;
     transform: translateY(-50%);
 }
-.responsible-table_custom-checkbox {
+.responsible-table_custom-checkbox, .custom-checkbox_without-label {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.responsible-table_custom-checkbox label::after {
+.responsible-table_custom-checkbox label::after, .custom-checkbox_without-label label::after {
     transform: translateY(-100%);
 }
 .responsible-table_custom-checkbox label.checked::after,
-.custom-checkbox_ver2 label.checked::after {
+.custom-checkbox_ver2 label.checked::after, .custom-checkbox_without-label label.checked::after {
     color: #fff;
     background-color: #8cc63f;
     border-color: #8cc63f;
 }
-.responsible-table_custom-checkbox label.focus,
-.custom-checkbox_ver2 label.focus {
+.responsible-table_custom-checkbox label.focus::after,
+.custom-checkbox_ver2 label.focus::after, .custom-checkbox_without-label label.focus::after {
     outline: 1px solid rgba(46, 198, 247, 0.33);
 }
 .finalization__table-row {
@@ -2186,15 +2188,11 @@ body > * {
 .finalization__date.finalization__cell-add path, .finalization__date.finalization__cell-add polygon {
     fill: rgb(124, 124, 124);
 }
-.amount_unpaid {
-    display: flex;
-    flex-wrap: wrap;
-}
 .amount a {
     margin-top: 2px;
 }
-.amount a + a {
-    margin-left: 14px;
+.amount a:not(:last-child) {
+    margin-right: 14px;
 }
 .amount .amount__number {
     color: #7fb439;
@@ -2205,6 +2203,8 @@ body > * {
 }
 .amount {
     width: 121px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .service__cell-wrapper {
     display: flex;
@@ -2233,4 +2233,24 @@ body > * {
 }
 .amount__links {
     display: flex;
+}
+.service__table .td_align-center {
+    text-align: center;
+}
+.service__table .td_align-right {
+    text-align: right;
+}
+.input-editing {
+    color: inherit;
+    border: none;
+    padding: 0;
+    display: inline-block;
+}
+.input-buffer {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    visibility: hidden;
+    white-space: nowrap;
+    display: inline;
 }

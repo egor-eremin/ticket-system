@@ -295,3 +295,15 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         }
     });
 })();
+(function openEditTicket() {
+    $('.button__edit-ticket').magnificPopup({
+        removalDelay:1000,
+        mainClass: 'mfp-fade',
+        // focus: '.input-edit-ticket',
+        items: {
+            src: '.change-ticket',
+            type: 'inline',
+        },
+        tClose: 'Закрыть',
+    });
+})();

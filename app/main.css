@@ -1167,7 +1167,7 @@ body > * {
     padding: 6px 15px;
     font-size: 13px;
 }
-.button__close-ticket {
+.ticket-body__button button + button {
     margin-left: 25px;
 }
 .ticket-body__button {
@@ -1624,7 +1624,7 @@ body > * {
     background-color: #2fc6f7;
     color: #fff;
 }
-.custom-checkbox input {
+.custom-checkbox input, .hide-checkbox {
     opacity: 0;
     width: 0;
     height: 0;
@@ -2261,4 +2261,122 @@ body > * {
 }
 .edit-content {
     min-height: 14px;
+}
+.input-edit-ticket {
+    width: 100%;
+    border: none;
+    padding: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.important-ticket label {
+    cursor: pointer;
+    font-size: 14px;
+}
+.important-ticket {
+    margin-top: 12px;
+}
+.important-ticket i {
+    transition: .3s ease-in-out;
+    font-size: 18px;
+    margin-left: 5px;
+}
+.important-ticket input:checked + label i {
+    color: #fc3131;
+}
+.ticket-body__main {
+    font-size: 14px;
+    color: #1b1c1a;
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #83838d;
+}
+.custom-select-edit .select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #1b1c1a;
+}
+.custom-select-edit .select2-container--default .select2-selection--single {
+    border-color: #1b1c1a;
+}
+.custom-select-edit .select2-container--open .select2-dropdown--below {
+    border-color: #1b1c1a;
+}
+.custom-select-edit .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    background: url("../images/down-chevron-black.svg") no-repeat center;
+    background-size: 15px 15px;
+}
+.custom-select-edit {
+    margin-top: 17px;
+}
+.ticket-text-edit {
+    border: none;
+    width: 100%;
+    height: 250px;
+    resize: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.del-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #d4d4d4;
+    transform: translate(90%, -90%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+.change-ticket__form {
+    background-color: #fff;
+}
+/*----------------------------Animation Popup----------------------------*/
+/* overlay at start */
+.mfp-fade.mfp-bg {
+    opacity: 0;
+
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+    opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+    opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
+}
+/*----------------------------Animation Popup End----------------------------*/
+
+.change-ticket {
+    position: relative;
+    display: flex;
+    width: calc(100% - 624px);
+    margin: 0 auto;
+}
+.change-ticket__form {
+    width: 100%;
+    padding: 30px;
+}
+.custom-select-edit select {
+    width: 400px;
 }

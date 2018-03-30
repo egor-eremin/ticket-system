@@ -2214,6 +2214,7 @@ body > * {
 }
 .service__cell-wrapper_column {
     flex-direction: column;
+    align-items: flex-start;
 }
 .service__table th {
     text-align: left;
@@ -2245,6 +2246,9 @@ body > * {
     border: none;
     padding: 0;
     display: inline-block;
+    min-width: 8px;
+    width: auto;
+    min-height: 14px;
 }
 .input-buffer {
     position: absolute;
@@ -2253,4 +2257,8 @@ body > * {
     visibility: hidden;
     white-space: nowrap;
     display: inline;
+    min-width: 8px;
+}
+.edit-content {
+    min-height: 14px;
 }

@@ -252,7 +252,9 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         var saveButtonElement = $(this).siblings('.save-button');
         var contentWidth = editContentElement.width();
         var editContent = editContentElement.text();
+        var bufferDiv = $(this).parents('.service__cell-edit').find('.input-buffer');
          e.preventDefault();
+         bufferDiv.text(editContent);
          editContentElement.hide();
          inputEditingElement.css({'display':'inline-block'});
          inputEditingElement.width(contentWidth);
@@ -262,25 +264,34 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         saveButtonElement.show().addClass('active');
 
     });
-    $('.save-button.active').on('click', function (e) {
-       var changeInputElement = $(this).parents('.service__cell-edit').find('.input-editing');
-       var changeContentElement = $(this).parents('.service__cell-edit').find('.edit');
-       var editButtonElemnt = $(this).siblings('.edit-button');
-       e.preventDefault();
-        changeInputElement.hide();
-        changeContentElement.css('display','inline-block');
-        changeContentElement.text(changeContentElement.val());
-        editButtonElemnt.css('display','inline-block');
-        $(this).hide();
-    });
 
-    // $('.input-editing').on('input',function () {
-    //     var inputBuffer = $(this).siblings('.input-buffer');
-    //     var inputBufferWidth = inputBuffer.width();
-    //     console.log(inputBufferWidth);
-    //     if (inputBufferWidth < 100) {
-    //         inputBuffer.text($(this).val());
-    //         $(this).width(inputBufferWidth);
-    //     }
-    // })
+
+    $('.input-editing').on('input',function () {
+        var inputBuffer = $(this).siblings('.input-buffer');
+        var inputBufferWidth = inputBuffer.width();
+        if (inputBufferWidth < 100) {
+            inputBuffer.text($(this).val());
+            inputBufferWidth = inputBuffer.width();
+            $(this).width(inputBufferWidth);
+        } else {
+            inputBuffer.text($(this).val());
+        }
+    })
+})();
+
+(function saveInput() {
+    $('.save-button').on('click', function (e) {
+        e.preventDefault();
+        if ($(this).hasClass('active')) {
+            var changeInputElement = $(this).parents('.service__cell-edit').find('.input-editing');
+            var changeContentElement = $(this).parents('.service__cell-edit').find('.edit-content');
+            var editButtonElemnt = $(this).siblings('.edit-button');
+            changeInputElement.hide();
+            changeContentElement.text(changeInputElement.val());
+            changeContentElement.css('display','inline-block');
+            changeContentElement.css('display','inline-block');
+            editButtonElemnt.css('display','inline-block');
+            $(this).addClass('active').hide();
+        }
+    });
 })();

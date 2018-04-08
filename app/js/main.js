@@ -98,6 +98,9 @@ function addTabs(tabbed_selector) {
     CustomSelect('.responsible-select',"Ответственный",'.responsible-select-wrapper');
     CustomSelect('.tester-select',"Тестировщик",'.tester-select-wrapper');
     CustomSelect('.director-select',"Постановщик",'.director-select-wrapper');
+    CustomSelect('.select-executor',"Исполнитель",'.select-executor-wrapper');
+    CustomSelect('.select-tester',"Тестировщик",'.select-tester-wrapper');
+    CustomSelect('.change-status',"Статус",'.change-status-wrapper');
 })();
 function CustomSelect(main_selector,select_placeholder,dr_parent) {
     $(main_selector).select2({
@@ -298,12 +301,21 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
 (function openEditTicket() {
     $('.button__edit-ticket').magnificPopup({
         removalDelay:1000,
-        mainClass: 'mfp-fade',
-        // focus: '.input-edit-ticket',
+        mainClass: 'change-popup mfp-fade',
+        focus: '.input-edit-ticket',
         items: {
             src: '.change-ticket',
             type: 'inline',
         },
         tClose: 'Закрыть',
     });
+})();
+(function addDatapickerWithTime() {
+    $('.deadline-datapicker').datepicker({
+        minDate: new Date(),
+        timepicker: true,
+        classes: 'deadline',
+    });
+        $('.deadline-datapicker-wrapper').append($('.deadline'));
+
 })();

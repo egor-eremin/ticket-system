@@ -1,3 +1,5 @@
+$(document).ready(function () {
+
 function addTabs(tabbed_selector) {
     // Get relevant elements and collections
     var tabbed = document.querySelector(tabbed_selector);
@@ -298,8 +300,9 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         }
     });
 })();
+
 (function openEditTicket() {
-    $('.button__edit-ticket').magnificPopup({
+    $('#open-edit-popup').magnificPopup({
         removalDelay:1000,
         mainClass: 'change-popup mfp-fade',
         focus: '.input-edit-ticket',
@@ -309,7 +312,12 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         },
         tClose: 'Закрыть',
     });
+    $(document).on('click', '#close-change-form', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+    })
 })();
+
 (function addDatapickerWithTime() {
     $('.deadline-datapicker').datepicker({
         minDate: new Date(),
@@ -317,5 +325,27 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         classes: 'deadline',
     });
         $('.deadline-datapicker-wrapper').append($('.deadline'));
+})();
+
+(function validateChangeForm() {
+        $('#change-form').validate();
+    })();
+
+(function editComments() {
+    $('.comments__answer, .other-menu__edit, .add-comment').on('click', function () {
+        var thisEditBlock = $(this).parents('.comments__item').siblings('.comments-edit');
+        var thisItem = $(this).parent('.comments__item');
+        if ($(this).hasClass('comments__answer')) {
+            thisEditBlock.slideDown(300);
+
+        } else {
+
+        }
+
+
+    });
+
 
 })();
+
+});

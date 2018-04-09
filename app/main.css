@@ -2486,3 +2486,20 @@ body > * {
     width: 102px;
     text-align: right;
 }
+#change-form label.error {
+    color: red;
+    margin-left: auto;
+    margin-top: 6px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    display: block;
+    text-align: right;
+    font-weight: normal;
+}
+.input-edit-ticket.error {
+    border: 1px solid red;
+}
+.comments-edit {
+    display: none;
+}

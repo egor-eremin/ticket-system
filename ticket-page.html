@@ -274,7 +274,7 @@
                         Редактировать
                         <i class="fas fa-pencil-alt"></i>
                     </button>
-                    <button class="button button-green button-small button__close-ticket">
+                    <button class="button button-small button__close-ticket">
                         закрыть обращение
                     </button>
                 </div>
@@ -296,12 +296,12 @@
                     </ul>
                     <section class="ticket-body__tabbed-section" id="section1">
                         <div class="comments">
-                            <div class="comments-wrapper">
-                                <div class="comments__item">
-                                    <div class="comments__item-avatar">
+                            <div class="comments__item">
+                                    <div class="comments__item-wrapper">
+                                        <div class="comments__item-avatar">
                                         <img src="images/user-avatar.jpg" alt="avatar-icon">
                                     </div>
-                                    <div class="comments__item-text">
+                                        <div class="comments__item-text">
                                         <div class="comments__text-row comments__text-row_flex">
                                             <div class="comments__title">
                                                 Эдуард Вартанян
@@ -350,21 +350,31 @@
                                             </span>
                                         </div>
                                     </div>
-
-                                </div>
-                                <div class="comments-edit">
-                                    <div class="comments-edit__text">
-
                                     </div>
-
-                                    вуф вуф
+                                    <div class="comments-edit">
+                                        <div class="comments-edit__text">
+                                            <textarea name="edit-comment" class="comments-edit__field"></textarea>
+                                        </div>
+                                        <div class="comments-edit__edit-bar">
+                                            <div class="comments-edit__edit-bar-item hide-comment">
+                                                <input type="checkbox" class="hide-comment__input" id="input-hide">
+                                                <label for="input-hide" class="comments-edit-label hide-comment__label">
+                                                    <i class="fas fa-eye"></i><i class="fas fa-eye-slash"></i> скрыть для заказчика
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="comments-edit__button-wrapper">
+                                            <button class="button button-small button__background-grey">отмена</button>
+                                            <button class="button button-green button__background-grey button-small">отправить</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
                             <div class="comments__item comments__item-answer">
-                                <div class="comments__item-avatar">
+                                <div class="comments__item-wrapper">
+                                        <div class="comments__item-avatar">
                                     <img src="images/user-avatar.jpg" alt="avatar-icon">
                                 </div>
-                                <div class="comments__item-text">
+                                        <div class="comments__item-text">
                                     <div class="comments__text-row comments__text-row_flex">
                                         <div class="comments__title">
                                             Эдуард Вартанян
@@ -405,12 +415,31 @@
                                         </span>
                                     </div>
                                 </div>
+                                </div>
+                                <div class="comments-edit">
+                                    <div class="comments-edit__text">
+                                        <textarea name="edit-comment" class="comments-edit__field"></textarea>
+                                    </div>
+                                    <div class="comments-edit__edit-bar">
+                                        <div class="comments-edit__edit-bar-item hide-comment">
+                                            <input type="checkbox" class="hide-comment__input" id="input-hide">
+                                            <label for="input-hide" class="comments-edit-label hide-comment__label">
+                                                <i class="fas fa-eye"></i><i class="fas fa-eye-slash"></i> скрыть для заказчика
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="comments-edit__button-wrapper">
+                                        <button class="button button-small button__background-grey">отмена</button>
+                                        <button class="button button-green button__background-grey button-small">отправить</button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="comments__item">
-                                <div class="comments__item-avatar">
+                                <div class="comments__item-wrapper">
+                                    <div class="comments__item-avatar">
                                     <img src="images/user-avatar.jpg" alt="avatar-icon">
                                 </div>
-                                <div class="comments__item-text">
+                                    <div class="comments__item-text">
                                     <div class="comments__text-row comments__text-row_flex">
                                         <div class="comments__title">
                                             Эдуард Вартанян
@@ -459,14 +488,51 @@
                                         </span>
                                     </div>
                                 </div>
+                                </div>
+                                <div class="comments-edit">
+                                    <div class="comments-edit__text">
+                                        <textarea name="edit-comment" class="comments-edit__field"></textarea>
+                                    </div>
+                                    <div class="comments-edit__edit-bar">
+                                        <div class="comments-edit__edit-bar-item hide-comment">
+                                            <input type="checkbox" class="hide-comment__input" id="input-hide">
+                                            <label for="input-hide" class="comments-edit-label hide-comment__label">
+                                                <i class="fas fa-eye"></i><i class="fas fa-eye-slash"></i> скрыть для заказчика
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="comments-edit__button-wrapper">
+                                        <button class="button button-small button__background-grey">отмена</button>
+                                        <button class="button button-green button__background-grey button-small">отправить</button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="comments__item comments__add-comment">
-                                <div class="comments__item-avatar">
-                                    <img src="images/user-avatar.jpg" alt="avatar-icon">
+                                <div class="comments__item-wrapper">
+                                    <div class="comments__item-avatar">
+                                        <img src="images/user-avatar.jpg" alt="avatar-icon">
+                                    </div>
+                                    <div class="comments__item-text">
+                                        <div class="add-comment">
+                                            Добавить комментарий
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="comments__item-text">
-                                    <div class="add-comment">
-                                        Добавить комментарий
+                                <div class="comments-edit">
+                                    <div class="comments-edit__text">
+                                        <textarea name="edit-comment" class="comments-edit__field"></textarea>
+                                    </div>
+                                    <div class="comments-edit__edit-bar">
+                                        <div class="comments-edit__edit-bar-item hide-comment">
+                                            <input type="checkbox" class="hide-comment__input" id="input-hide">
+                                            <label for="input-hide" class="comments-edit-label hide-comment__label">
+                                                <i class="fas fa-eye"></i><i class="fas fa-eye-slash"></i> скрыть для заказчика
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="comments-edit__button-wrapper">
+                                        <button class="button button-small button__background-grey">отмена</button>
+                                        <button class="button button-green button__background-grey button-small">отправить</button>
                                     </div>
                                 </div>
                             </div>

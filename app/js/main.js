@@ -331,16 +331,27 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         $('#change-form').validate();
     })();
 
-(function editComments() {
+(function OpenEditComments() {
     $('.comments__answer, .other-menu__edit, .add-comment').on('click', function () {
-        var thisEditBlock = $(this).parents('.comments__item').siblings('.comments-edit');
-        var thisItem = $(this).parent('.comments__item');
-        if ($(this).hasClass('comments__answer')) {
-            thisEditBlock.slideDown(300);
 
-        } else {
+        var thisEditBlock = $(this).parents('.comments__item').find('.comments-edit');
+        var thisItem = $(this).parents('.comments__item-wrapper');
+        var addCommentBlock = $('.comments__add-comment');
+        var addCommentBlockWrapper = $('.comments__add-comment .comments__item-wrapper');
+        var addCommentBlockCommentsEdit = $('.comments__add-comment .comments-edit');
 
-        }
+            if ($(this).hasClass('other-menu__edit')) {
+
+                thisEditBlock.slideDown(300);
+                addCommentBlock.slideUp(300);
+            } else if ($(this).hasClass('comments__answer')) {
+                addCommentBlockWrapper.hide(0);
+                addCommentBlockCommentsEdit.slideDown(300);
+            } else if ($(this).hasClass('add-comment')) {
+
+                thisItem.hide(0);
+                thisEditBlock.slideDown(300);
+            }
 
 
     });

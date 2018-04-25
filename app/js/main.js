@@ -352,11 +352,17 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
                 thisItem.hide(0);
                 thisEditBlock.slideDown(300);
             }
-
-
     });
-
-
 })();
-
+(function callbackModal() {
+    $('.callback-link').magnificPopup({
+        type:"inline",
+    });
+})();
+(function validationCallbackModal() {
+    $('.callback-form').validate({});
+})();
+(function addPhoneMask() {
+    $('.input-phone').mask('+7 (000)-000-00-00');
+})();
 });

@@ -1089,13 +1089,43 @@
             <a href="#">
                 Политика обработки персональных данных
             </a>
-            <a href="#">
+            <a class="callback-link" href="#callback-modal">
                 Обратная связь
             </a>
             <span>
                 &copy; 2013-2017 «ММИТ».
             </span>
         </div>
+    </div>
+    <div class="callback mfp-hide modal-popup" id="callback-modal">
+        <div class="modal-popup__title">
+            Обратная связь
+        </div>
+        <form action="#" class="callback-form">
+            <div class="form-item">
+                <label for="callback-name" class="form-label form-label_popup-form">Имя</label>
+                <input required type="text" placeholder="Ваше имя" name="form_text_3" id="callback-name">
+            </div>
+            <div class="form-item">
+                <label for="callback-phone" class="form-label form-label_popup-form">Телефон</label>
+                <input required type="text" class="input-phone" placeholder="Ваш телефон" name="form_text_4" id="callback-phone">
+            </div>
+            <div class="form-item">
+                <label for="callback-text" class="form-label form-label_popup-form">Комментерий</label>
+                <textarea id="callback-text" name="form_textarea_5"></textarea>
+            </div>
+            <div class="form-item custom-checkbox">
+                <input type="checkbox" name="personal_agreement" required id="callback-agreement">
+                <label class="form-label" for="callback-agreement">
+                    Согласен на обработку персональных данных <a href="/soglashenie.pdf" target="_blank">(соглашение)</a>
+                </label>
+            </div>
+            <div class="form-item__bottom">
+                <button type="submit" class="button button-green button-small">
+                    Связаться со мной
+                </button>
+            </div>
+        </form>
     </div>
 </footer>
 <script src="app/js/jquery-3.2.1.min.js"></script>

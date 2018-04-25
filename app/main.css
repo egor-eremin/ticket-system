@@ -1528,10 +1528,15 @@ body > * {
 .col-6 {
     width: 50%;
 }
-.add-form__item input, .modal-popup input {
+.add-form__item input, .modal-popup input,
+.modal-popup textarea {
     width: 100%;
     padding: 14px 15px;
     border: 1px solid #dadbdb;
+}
+.modal-popup textarea {
+    resize: none;
+    height: 100px;
 }
 .add-form__item input[type="text"], .modal-popup input[type="text"] {
     height: 45px;
@@ -1640,7 +1645,7 @@ body > * {
     padding-left: 25px;
     cursor: pointer;
 }
-.custom-checkbox label::before, .custom-checkbox label::after {
+.custom-checkbox label:not(.error)::before, .custom-checkbox label:not(.error)::after {
     content: "";
     border: 1px solid #dadbdb;
     display: block;
@@ -1655,7 +1660,7 @@ body > * {
     transition: .3s ease-in-out;
     box-sizing: border-box;
 }
-.custom-checkbox label::after {
+.custom-checkbox label:not(.error)::after {
     z-index: 2;
     content: "\f00c";
     font-family: FontAwesome;
@@ -1671,7 +1676,7 @@ body > * {
     align-items: center;
     border: 1px solid transparent;
 }
-.custom-checkbox input:checked + label::after {
+.custom-checkbox input:checked ~ label:not(.error)::after {
     color: #fff;
     background-color: #8cc63f;
     border-color: #8cc63f;
@@ -1679,7 +1684,7 @@ body > * {
 .custom-select-wrapper_mar-bottom {
     margin-bottom: 15px;
 }
-.custom-checkbox input:focus + label::before {
+.custom-checkbox input:focus ~ label:not(.error)::before {
     outline: 1px solid rgba(46, 198, 247, 0.33);
 }
 .custom-input-file input {
@@ -1689,7 +1694,7 @@ body > * {
     height: 0;
     opacity: 0;
 }
-.custom-input-file input:focus + label {
+.custom-input-file input:focus ~ label {
     outline: 1px solid rgba(46, 198, 247, 0.33);
 }
 .custom-input-file__label {
@@ -1972,12 +1977,14 @@ body > * {
     padding: 31px;
     font-size: 13px;
     position: relative;
+    border-radius: 6px;
 }
 .modal-popup__title {
     font-size:20px;
     font-weight: 700;
     margin-bottom: 22px;
     text-align: center;
+    font-family: "Roboto Slab", sans-serif;
 }
 .form-item {
     margin-bottom: 22px;
@@ -2581,4 +2588,59 @@ body > * {
 }
 .comments__add-comment .comments__item-wrapper {
     align-items: center;
+}
+.modal-popup .mfp-close {
+    transform: translate(50%, -50%);
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 0;
+    opacity: 1;
+    box-shadow: 4px 5px 6.37px 0.63px rgba(0, 0, 0, 0.11);
+}
+.modal-popup .mfp-close::before, .modal-popup .mfp-close::after {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background-color: #404040;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: .3s ease-in-out;
+}
+.modal-popup .mfp-close::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modal-popup .mfp-close::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.modal-popup .mfp-close:hover::before {
+    height: 2px;
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+.modal-popup .mfp-close:hover::after {
+    height: 2px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.form-item__bottom {
+    text-align: center;
+}
+.modal-popup input.error {
+    border-color: red;
+}
+.mfp-close:active {
+    top: 0;
+}
+#personal_agreement-error {
+    display: none !important;
+}
+.custom-checkbox input.error ~ .form-label::before {
+    border-color: red;
+}
+.callback .custom-checkbox a {
+    text-decoration: underline;
+}
+.callback .custom-checkbox a:hover {
+    text-decoration: none;
 }

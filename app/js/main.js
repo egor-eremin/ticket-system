@@ -365,4 +365,12 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
 (function addPhoneMask() {
     $('.input-phone').mask('+7 (000)-000-00-00');
 })();
+(function addAnimation() {
+    $('.convenience__information').viewportChecker({
+        classToAdd: 'active',
+    });
+    $('.execution__step').viewportChecker({
+       classToAdd: 'active',
+    });
+})()
 });

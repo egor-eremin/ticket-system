@@ -665,6 +665,7 @@ b {
     height: 78px;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .main-footer__wrapper {
     display: flex;
@@ -688,13 +689,17 @@ b {
     display: flex;
     align-items: center;
 }
-h1 {
+h1, h2 {
     padding: 0;
     margin: 0;
     font-size: 36px;
     font-family: "Roboto Slab", sans-serif;
     font-weight: 400;
     margin-bottom: 35px;
+}
+h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 .quantity-posts {
     font-family: 'Open Sans', sans-serif;
@@ -704,7 +709,7 @@ h1 {
 }
 .main-block {
     padding-top: 55px;
-
+    width: 100%;
 }
 .button {
     color: #2fc6f7;
@@ -1035,9 +1040,9 @@ main {
 .ticket-body {
     flex-grow: 1;
 }
-body > * {
-    width: 100%;
-}
+/*body > * {*/
+    /*width: 100%;*/
+/*}*/
 .button-with-i {
     padding-left: 49px;
 }
@@ -2643,4 +2648,286 @@ body > * {
 }
 .callback .custom-checkbox a:hover {
     text-decoration: none;
+}
+.template-wrapper_how-made {
+    max-width: 1170px;
+    margin: 0 auto;
+    width: 100%;
+}
+.time-work {
+    display: flex;
+    margin-bottom: 52px;
+}
+.time-work__item {
+    flex-shrink: 0;
+    width: 50%;
+}
+.time-work__item:nth-child(1) {
+    padding-right: 15px;
+}
+.time-work__item:nth-child(2) {
+    padding-left: 15px;
+}
+.time-work__text {
+    width: 357px;
+    line-height: 1.4;
+    font-size: 17px;
+    margin-top: 20px;
+}
+.main-block_grey {
+    background-color: #f0f0f0;
+}
+.convenience p, .convenience__title {
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.convenience__title {
+    font-weight: 700;
+}
+.convenience__information {
+    display: flex;
+    margin-top: 109px;
+    margin-bottom: 130px;
+}
+.border-right {
+    padding-left: 32px;
+    position: relative;
+}
+.border-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: #6ed7e3;
+}
+.convenience__img{
+    position: relative;
+    width: 100%;
+}
+.convenience__img img {
+    position: absolute;
+    filter: drop-shadow(0px 23px 49px rgba(0, 0, 0, 0.2));
+    visibility: hidden;
+}
+.convenience__information-text {
+    max-width: 440px;
+    width: 100%;
+    margin-right: 50px;
+}
+.convenience__img img:nth-child(1) {
+    top: 15px;
+}
+.convenience__img img:nth-child(2) {
+    right: 0;
+    top: -37px;
+}
+.convenience__information.active img {
+    visibility: visible;
+    -webkit-animation: scale-up-bl 1.2s ease-in-out both;
+    animation: scale-up-bl 1.2s ease-in-out both;
+}
+.convenience__information.active img:nth-child(1) {
+    animation-delay: .4s;
+}
+.convenience__information.active img:nth-child(2) {
+    animation-delay: 1.2s;
+}
+@-webkit-keyframes scale-up-bl {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+    }
+}
+@keyframes scale-up-bl {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+    }
+}
+.execution__step {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 250px;
+}
+.execution__step + .execution__step {
+    margin-top: 43px;
+}
+.execution__step_reverse {
+    flex-direction: row-reverse;
+}
+.execution__text, .execution__infographic {
+    width: calc(50% - 20px);
+    max-width: 480px;
+    margin-top: 17px;
+}
+.execution__number {
+    width: 40px;
+    text-align: center;
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 72px;
+    color: #87cb58;
+    height: 100%;
+    position: relative;
+    visibility: hidden;
+    overflow: hidden;
+}
+.execution__number::before, .execution__number::after {
+    content: "";
+    height: calc(100% - 112px);
+    position: absolute;
+    display: block;
+    width: 2px;
+    background-color: #87cb58;
+    left: 50%;
+    margin-left: -1px;
+    top: 112px;
+}
+.execution__number::after {
+    background-color: #fff;
+    transition: transform 1.2s ease-in-out .5s;
+}
+.execution__title {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 13px;
+}
+.execution__step_reverse .execution__infographic {
+    text-align: center;
+}
+.execution__text {
+    margin-top: 17px;
+    visibility: hidden;
+}
+.execution__infographic {
+    position: relative;
+    visibility: hidden;
+}
+.creating-ticket img:nth-child(2) {
+    right: 52px;
+    bottom: -23px;
+    position: absolute;
+}
+.reaction {
+    margin-top: -43px;
+}
+.reaction img:nth-child(1) {
+    transform: translateX(-10%);
+}
+.reaction img:nth-child(2) {
+    transform: translateX(10%);
+}
+.all-good img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 56px;
+}
+.execution__step.active .execution__text,
+.execution__step.active .execution__number,
+.execution__step.active .execution__infographic {
+    visibility: visible;
+}
+.execution__step.active .execution__text {
+    -webkit-animation: fade-in-right 1s ease-in-out .5s both;
+    animation: fade-in-right 1s ease-in-out .5s both;
+}
+.execution__step_reverse.execution__step.active .execution__text {
+    -webkit-animation: fade-in-left 1s ease-in-out both;
+    animation: fade-in-left 1s ease-in-out both;
+}
+.execution__step.active .execution__number {
+    -webkit-animation: fade-in 1s ease-in-out both;
+    animation: fade-in 1s ease-in-out both;
+}
+.execution__step.active .execution__number::after {
+    transform: translateY(100%);
+}
+.execution__step.active .creating-ticket img:first-child {
+    animation-delay: 1.2s;
+    -webkit-animation: fade-in 1s ease-in-out both;
+    animation: fade-in 1s ease-in-out both;
+}
+@-webkit-keyframes fade-in-right {
+    0% {
+        -webkit-transform: translateX(40%);
+        transform: translateX(40%);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fade-in-right {
+    0% {
+        -webkit-transform: translateX(40%);
+        transform: translateX(40%);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fade-in-left {
+    0% {
+        -webkit-transform: translateX(-40%);
+        transform: translateX(-40%);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fade-in-left {
+    0% {
+        -webkit-transform: translateX(-40%);
+        transform: translateX(-40%);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

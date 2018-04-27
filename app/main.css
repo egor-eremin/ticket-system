@@ -1016,7 +1016,7 @@ h2 {
     text-decoration: none;
 }
 main {
-    margin-bottom: 43px;
+    margin-bottom: 60px;
 }
 .comment-svg.no-read .comment-svg__path {
     fill: #2fc6f7;
@@ -2118,6 +2118,7 @@ main {
     display: flex;
     position: relative;
     align-items: center;
+    padding-left: 25px;
     width: auto;
 }
 .responsible-table_custom-checkbox label::before, .responsible-table_custom-checkbox label::after,
@@ -3043,3 +3044,21 @@ main {
 .no-read + span {
     color: #fff;
 }
+.offer-link {
+    font-size: 16px;
+}
+.bills, .acts {
+    width: 1043px;
+}
+.bills__check {
+    color: #8cc63f;
+    margin-left: 11px;
+}
+.pay, .report {
+    width: 786px;
+}
+.document-tabs {
+    margin-top: 59px;
+    margin-bottom: 33px;
+}
+

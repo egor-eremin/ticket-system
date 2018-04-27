@@ -79,9 +79,14 @@ function addTabs(tabbed_selector) {
     }
 })();
 (function createClientCardTabs() {
-    if ($('div').is('.client-card__tabs')) {
-        addTabs('.tabbed');
-    }
+        if ($('div').is('.client-card__tabs')) {
+            addTabs('.tabbed');
+        }
+})();
+(function createClientCardTabs() {
+        if ($('div').is('.document-tabs')) {
+            addTabs('.tabbed');
+        }
 })();
 (function addPop_upOtherMenu() {
     $('.comments__other').on('click', function () {
@@ -361,6 +366,9 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
 })();
 (function validationCallbackModal() {
     $('.callback-form').validate({});
+    $('.callback-form button[type="submit"]').on('click', function () {
+       if (!$('.callback-form').valid()) return false;
+    });
 })();
 (function addPhoneMask() {
     $('.input-phone').mask('+7 (000)-000-00-00');

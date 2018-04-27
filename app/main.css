@@ -822,6 +822,7 @@ h2 {
 .quantity-comment {
     position: relative;
     margin-left: 5px;
+    margin-top: -8px;
 }
 .quantity-comment svg {
     vertical-align: middle;
@@ -1018,16 +1019,21 @@ main {
     margin-bottom: 43px;
 }
 .comment-svg.no-read .comment-svg__path {
-    fill: none;
+    fill: #2fc6f7;
     stroke: #2fc6f7;
     stroke-width: 1px;
     fill-rule: evenodd;
     opacity: 0.55;
+    transition: .3s ease-in-out;
 }
 .comment-svg.read .comment-svg__path {
     fill: #ddd;
     fill-rule: evenodd;
     opacity: 0.55;
+    transition: .3s ease-in-out;
+}
+.quantity-comment:hover .comment-svg__path {
+    opacity: 1;
 }
 .open-tickets__item .quantity-comment {
     margin-left: 0;
@@ -2727,13 +2733,13 @@ main {
 .convenience__information.active img {
     visibility: visible;
     -webkit-animation: scale-up-bl 1.2s ease-in-out both;
-    animation: scale-up-bl 1.2s ease-in-out both;
+    animation: scale-up-bl 1s ease-in-out both;
 }
 .convenience__information.active img:nth-child(1) {
     animation-delay: .4s;
 }
 .convenience__information.active img:nth-child(2) {
-    animation-delay: 1.2s;
+    animation-delay: 1s;
 }
 @-webkit-keyframes scale-up-bl {
     0% {
@@ -2804,7 +2810,7 @@ main {
 }
 .execution__number::after {
     background-color: #fff;
-    transition: transform 1.2s ease-in-out .5s;
+    transition: transform 1s ease-in-out 1.2s;
 }
 .execution__title {
     font-family: "Roboto Slab", sans-serif;
@@ -2848,24 +2854,59 @@ main {
     visibility: visible;
 }
 .execution__step.active .execution__text {
-    -webkit-animation: fade-in-right 1s ease-in-out .5s both;
-    animation: fade-in-right 1s ease-in-out .5s both;
+    -webkit-animation: fade-in-right 1s ease-in-out 1.6s both;
+    animation: fade-in-right 1s ease-in-out 1.6s both;
 }
 .execution__step_reverse.execution__step.active .execution__text {
-    -webkit-animation: fade-in-left 1s ease-in-out both;
-    animation: fade-in-left 1s ease-in-out both;
+    -webkit-animation: fade-in-left 1s ease-in-out 1.6s both;
+    animation: fade-in-left 1s ease-in-out 1.6s both;
 }
 .execution__step.active .execution__number {
-    -webkit-animation: fade-in 1s ease-in-out both;
-    animation: fade-in 1s ease-in-out both;
+    -webkit-animation: fade-in 1s ease-in-out .3s both;
+    animation: fade-in 1s ease-in-out .3s both;
 }
 .execution__step.active .execution__number::after {
     transform: translateY(100%);
 }
 .execution__step.active .creating-ticket img:first-child {
-    animation-delay: 1.2s;
-    -webkit-animation: fade-in 1s ease-in-out both;
-    animation: fade-in 1s ease-in-out both;
+    -webkit-animation: fade-in 1s ease-in-out 2s both;
+    animation: fade-in 1s ease-in-out 2s both;
+}
+.execution__step.active .creating-ticket img:nth-child(2) {
+    -webkit-animation: scale 1s ease-in-out 2.5s both;
+    animation: scale 1s ease-in-out 2.5s both;
+}
+.execution__step.active .reaction img:first-child {
+    -webkit-animation: fade-in 1s ease-in-out 2s both;
+    animation: fade-in 1s ease-in-out 2s both;
+}
+.execution__step.active .reaction img:nth-child(2) {
+    -webkit-animation: fade-in 1s ease-in-out 2.5s both;
+    animation: fade-in 1s ease-in-out 2.5s both;
+}
+.execution__step.active .implementation img:nth-child(1) {
+    -webkit-animation: fade-in 1s ease-in-out 2s both;
+    animation: fade-in 1s ease-in-out 2s both;
+}
+.execution__step.active .implementation img:nth-child(2) {
+    -webkit-animation: fade-in 1s ease-in-out 2.5s both;
+    animation: fade-in 1s ease-in-out 2.5s both;
+}
+.execution__step.active .implementation img:nth-child(3) {
+    -webkit-animation: fade-in 1s ease-in-out 3s both;
+    animation: fade-in 1s ease-in-out 3s both;
+}
+.execution__step.active .all-good img:nth-child(1) {
+    -webkit-animation: fade-in 1s ease-in-out 2s both;
+    animation: fade-in 1s ease-in-out 2s both;
+}
+.execution__step.active .all-good img:nth-child(2) {
+    -webkit-animation: scale 1s ease-in-out 2.5s both;
+    animation: scale 1s ease-in-out 2.5s both;
+}
+.execution__step:last-child .execution__number::before,
+.execution__step:last-child .execution__number::after {
+    content: none;
 }
 @-webkit-keyframes fade-in-right {
     0% {
@@ -2930,4 +2971,75 @@ main {
     100% {
         opacity: 1;
     }
+}
+@-webkit-keyframes scale {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.execution {
+    margin-top: 90px;
+    margin-bottom: 120px;
+}
+.regulations {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 100px;
+}
+.regulations td, .regulations th {
+    border: 1px solid #f5f5f5;
+    padding: 32px 10px;
+}
+.regulations td:nth-child(1) {
+    width: 20%;
+}
+.regulations td:nth-child(2), .regulations td:nth-child(3) {
+    width: 40%;
+}
+.regulations td {
+    text-align: center;
+}
+.regulations td:nth-child(2) {
+    text-align: left;
+    padding-right: 59px;
+    padding-left: 59px;
+}
+.regulations i {
+    margin-right: 20px;
+    color: #ff4d4d;
+}
+.normal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.normal::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #47daeb;
+    margin-right: 20px;
+}
+.no-read + span {
+    color: #fff;
 }

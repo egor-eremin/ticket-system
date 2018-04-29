@@ -1195,7 +1195,7 @@ main {
     margin-right: 15px;
 }
 .ticket-information__status-icon {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     height: 22px;
     width: 100%;
@@ -3075,6 +3075,7 @@ main {
     color: #2e2e2e;
     font-size: 12px;
     line-height: 18px;
+    background: rgba(255,255,255,1) !important;
 }
 .submenu_flex {
     display: flex;
@@ -3157,4 +3158,57 @@ main {
     width: 16px;
     height: 11px;
     background-size: 100% auto;
+}
+.status {
+    display: flex;
+    align-items: center;
+}
+.status::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin-right: 10px;
+}
+.status-performed {
+    color: #27bbea;
+}
+.status-performed::before {
+    background: url("../images/status-performed.svg") no-repeat;
+}
+.status-expects {
+    color: #ffbf24;
+}
+.status-expects::before {
+    background: url("../images/status-expects.svg") no-repeat;
+}
+.status-preparation {
+    color: #c17bfc;
+}
+.status-preparation::before {
+    background: url("../images/status-preparation.svg") no-repeat;
+}
+.status-confirmation {
+    color: #b3e80f;
+}
+.status-confirmation::before {
+    background: url("../images/status-confirmation.svg") no-repeat;
+}
+.status-tested {
+    color: #afad08;
+}
+.status-tested::before {
+    background: url("../images/status-tested.svg") no-repeat;
+}
+.status-awaiting {
+    color: #fc7115;
+}
+.status-awaiting::before {
+    background: url("../images/status-awaiting.svg") no-repeat;
+}
+.status-ready {
+    color: #2f9a16;
+}
+.status-ready::before {
+    background: url("../images/status-ready.svg") no-repeat;
 }

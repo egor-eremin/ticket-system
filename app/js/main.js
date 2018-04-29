@@ -411,6 +411,14 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             jQuery('.submenu').hide();
         }, false);
     })();
+    (function animateAfterAjax() {
+        $( document ).ajaxSend(function() {
+            $('.preloder').addClass('animated');
+        });
+        $( document ).ajaxStop(function() {
+            $('.preloder').removeClass('animated');
+        });
+    })();
 });
 BX.ready(function(){
     loader = BX('preloder');

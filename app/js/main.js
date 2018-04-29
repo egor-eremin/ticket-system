@@ -380,5 +380,44 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
     $('.execution__step').viewportChecker({
        classToAdd: 'active',
     });
-})()
+})();
+    (function addDropDownMenu() {
+        jQuery('.submenu').hide();
+        jQuery('.header__information, .user-information').hover(function () {
+            if (document.documentElement.clientWidth > 1280) {
+                clearTimeout(jQuery.data(this, 'timer'));
+                jQuery('.submenu', this).stop(true, true).fadeIn(300);
+            }
+        }, function () {
+            if (document.documentElement.clientWidth > 1280) {
+                jQuery.data(this, 'timer', setTimeout(jQuery.proxy(function () {
+                    jQuery('.submenu', this).stop(true, true).fadeOut(300);
+                }, this), 100));
+            }
+        });
+        jQuery('.header__information, .user-information').click(function () {
+            if (document.documentElement.clientWidth < 1280) {
+                if (jQuery('.submenu', this).css('display') == 'none') {
+                    jQuery('.submenu', this).fadeIn(300);
+                } else {
+                    jQuery('.submenu', this).fadeOut(300)
+                }
+            }
+        });
+        window.addEventListener("resize", function () {
+            jQuery('.submenu').hide();
+        }, false);
+        window.addEventListener("orientationchange", function () {
+            jQuery('.submenu').hide();
+        }, false);
+    })();
+});
+BX.ready(function(){
+    loader = BX('preloder');
+    BX.showWait = function(node, msg) {
+        $('.preloder').addClass('animated');
+    };
+    BX.closeWait = function(node, obMsg) {
+        $('.preloder').removeClass('animated');
+    };
 });

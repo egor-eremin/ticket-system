@@ -558,13 +558,14 @@ b {
 .header__information {
     height: 100%;
     display: flex;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: rgba(9, 86, 152, .4);
     width: 321px;
     font-size: 12px;
     line-height: 18px;
+    position: relative;
+    cursor: pointer;
 }
 .header__col:last-child {
     justify-content: flex-end;
@@ -597,6 +598,7 @@ b {
     transition: .3s ease-in-out;
     padding-right: 15px;
     padding-left: 15px;
+    position: relative;
 }
 .user-information:hover {
     background-color: rgba(255,255,255,.2);
@@ -3061,4 +3063,98 @@ main {
     margin-top: 59px;
     margin-bottom: 33px;
 }
-
+.submenu {
+    box-shadow: 0px 12px 27px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    padding: 21px 30px;
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%);
+    color: #2e2e2e;
+    font-size: 12px;
+    line-height: 18px;
+}
+.submenu_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 18px;
+}
+.header__information-title_left {
+    margin-right: auto;
+    padding-right: 9px;
+    color: #83838d;
+}
+.header__information-text_bold {
+    font-weight: 700;
+    color: #83838d;
+}
+.preloder {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, .7);
+    flex: 1;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity .5s linear;
+    top: 0;
+    left: 0;
+}
+.preloder.animated {
+    z-index: 99999;
+    opacity: 1;
+}
+.submenu__item {
+    margin-bottom: 5px;
+    position: relative;
+}
+.sign-in__item a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: block;
+}
+.sign-in__item a {
+    text-align: left;
+    display: block;
+    transition: .3s ease-in-out;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    padding-left: 26px;
+    position: relative;
+}
+.sign-in__item a:hover {
+    color: #4193c9;
+}
+.sign-in__title {
+    color: #83838d;
+    font-size: 12px;
+    line-height: 18px;
+}
+.sign-in__item {
+    margin-top: 8px;
+    position: relative;
+}
+.sign-in__settings a::before {
+    background: url("../images/setting.png") no-repeat;
+    width: 16px;
+    height: 16px;
+    background-size: 100% auto;
+}
+.sign-in__escape a::before {
+    background: url("../images/enter.png") no-repeat;
+    width: 16px;
+    height: 11px;
+    background-size: 100% auto;
+}

@@ -419,6 +419,16 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             $('.preloder').removeClass('animated');
         });
     })();
+    (function showNoticeMenu() {
+        $('.notice').on('click', function () {
+            $('.menu-saidbar').toggleClass('active');
+        });
+    })();
+    (function closeNoticeMenu() {
+        $('.menu-saidbar__close-button, .menu-saidbar__close-wrapper').on('click', function () {
+           $('.menu-saidbar').removeClass('active');
+        });
+    })();
 });
 BX.ready(function(){
     loader = BX('preloder');

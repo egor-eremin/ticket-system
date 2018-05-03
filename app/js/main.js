@@ -88,15 +88,20 @@ function addTabs(tabbed_selector) {
             addTabs('.tabbed');
         }
 })();
-(function addPop_upOtherMenu() {
+(function addPopupOtherMenu() {
     $('.comments__other').on('click', function () {
-       $(this).toggleClass('open-popup');
+       if ($(this).hasClass('open-popup')) {
+           $(this).removeClass('open-popup');
+           $('.close-wrapper-for-comments').remove();
+       } else {
+           $(this).addClass('open-popup');
+           $('body').append('<div class="close-wrapper-for-comments"></div>');
+       }
     });
-    $(document).mouseup(function (e){
-        var otherMenu = $(".other-menu");
-        if (!otherMenu.is(e.target) && $('.comments__other').hasClass('open-popup') && otherMenu.has(e.target).length === 0) {
-            $('.comments__other').removeClass('open-popup');
-        }
+    
+    $(document).on('click', '.close-wrapper-for-comments', function () {
+        $('.comments__other').removeClass('open-popup');
+        $(this).remove();
     });
 })();
 (function createCustomSelect() {
@@ -427,6 +432,28 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
     (function closeNoticeMenu() {
         $('.menu-saidbar__close-button, .menu-saidbar__close-wrapper').on('click', function () {
            $('.menu-saidbar').removeClass('active');
+        });
+    })();
+    $( document ).ajaxSend(function() {
+        $('.preloder').addClass('animated');
+    });
+    $( document ).ajaxStop(function() {
+        $('.preloder').removeClass('animated');
+    });
+    (function addPopupEditTicket() {
+        $('.ticket__edit').on('click', function () {
+            if ($(this).hasClass('open-popup')) {
+                $(this).removeClass('open-popup');
+                $('.close-wrapper-for-comments').remove();
+            } else {
+                $(this).addClass('open-popup');
+                $('body').append('<div class="close-wrapper-for-comments"></div>');
+            }
+        });
+
+        $(document).on('click', '.close-wrapper-for-comments', function () {
+            $('.ticket__edit').removeClass('open-popup');
+            $(this).remove();
         });
     })();
 });

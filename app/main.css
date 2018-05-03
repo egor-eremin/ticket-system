@@ -789,6 +789,7 @@ h2 {
     cursor: pointer;
     vertical-align: middle;
     transition: .3s ease-in-out;
+    position: relative;
 }
 .ticket__edit:hover {
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
@@ -1464,6 +1465,21 @@ main {
     visibility: hidden;
     opacity: 0;
     transition: visibility .2s linear, opacity .2s linear;
+    z-index: 1000;
+}
+.ticket__edit-popup {
+    background-color: #fff;
+    box-shadow: 0 7px 21px rgba(83,92,105,.12), 0 -1px 6px 0 rgba(83,92,105,.06);
+    padding: 10px 0;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 1000;
+    width: 110px;
+    top: 30px;
+    left: -10px;
+    transition: .3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
 }
 .other-menu__triangle {
     display: block;
@@ -1488,11 +1504,23 @@ main {
     left: 50%;
     box-shadow: 0 0 21px rgba(83,92,105,.13);
 }
-.other-menu__item {
+.other-menu__item, .ticket__edit-popup-item {
     font-size: 10px;
     padding: 7px 19px;
     cursor: pointer;
     transition: .3s ease-in-out;
+}
+.ticket__edit-popup-item {
+    font-weight: 300;
+    font-size: 10px;
+    color: #7f7f7f;
+    line-height: 1.2;
+    transition: .3s ease-in-out;
+    width: 100%;
+    text-align: left;
+}
+.ticket__edit-popup-item:hover {
+    background-color: #f6f8f9;
 }
 .other-menu__item:hover {
     background-color: #f6f8f9;
@@ -3172,7 +3200,7 @@ main {
     margin-right: 10px;
 }
 .status-performed {
-    color: #27bbea;
+    color: #0e84cc;
 }
 .status-performed::before {
     background: url("../images/status-performed.svg") no-repeat;
@@ -3212,6 +3240,12 @@ main {
 }
 .status-ready::before {
     background: url("../images/status-ready.svg") no-repeat;
+}
+.status-pause::before {
+    background: url("../images/status-pause.svg") no-repeat;
+}
+.status-pause {
+    color: #27bbea;
 }
 .menu-saidbar {
     position: absolute;
@@ -3371,4 +3405,37 @@ main {
 .menu-saidbar__wrapper {
     height: 100%;
     overflow: hidden;
+}
+.close-wrapper-for-comments {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+}
+.ticket__popup-triangle {
+    display: block;
+    width: 21px;
+    height: 21px;
+    overflow: hidden;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -38px;
+}
+.ticket__popup-triangle::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    transform: translate(-50%, 50%) rotate(-45deg);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    box-shadow: 0 0 21px rgba(83,92,105,.13);
+}
+.ticket__edit.open-popup .ticket__edit-popup {
+    opacity: 1;
+    visibility: visible;
 }

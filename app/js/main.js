@@ -349,21 +349,36 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         var addCommentBlock = $('.comments__add-comment');
         var addCommentBlockWrapper = $('.comments__add-comment .comments__item-wrapper');
         var addCommentBlockCommentsEdit = $('.comments__add-comment .comments-edit');
+        var allCommentEdit = $('.comments-edit');
 
             if ($(this).hasClass('other-menu__edit')) {
-
                 thisEditBlock.slideDown(300);
                 addCommentBlock.slideUp(300);
             } else if ($(this).hasClass('comments__answer')) {
+                addCommentBlock.show(0);
+                allCommentEdit.slideUp(300);
                 addCommentBlockWrapper.hide(0);
                 addCommentBlockCommentsEdit.slideDown(300);
+                $('html, body').animate({ scrollTop: $('.comments__add-comment').offset().top }, 500);
             } else if ($(this).hasClass('add-comment')) {
-
                 thisItem.hide(0);
                 thisEditBlock.slideDown(300);
             }
     });
 })();
+
+(function canselButton() {
+    $('.comments-edit__button-wrapper').on('click', function () {
+        var editBlock = $(this).parents('.comments-edit');
+        var addCommentBlock = $('.comments__add-comment');
+        var addCommentWrapper = $('.comments__add-comment .comments__item-wrapper');
+
+        addCommentWrapper.show(0);
+        editBlock.slideUp(300);
+        addCommentBlock.show(0);
+    })
+})();
+
 (function callbackModal() {
     $('.callback-link').magnificPopup({
         type:"inline",

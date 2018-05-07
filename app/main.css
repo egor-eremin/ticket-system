@@ -826,7 +826,7 @@ h2 {
 .quantity-comment {
     position: relative;
     margin-left: 5px;
-    margin-top: -8px;
+    margin-top: -7px;
 }
 .quantity-comment svg {
     vertical-align: middle;
@@ -882,6 +882,7 @@ h2 {
 .template-wrapper__ticket {
     display: flex;
     align-items: flex-start;
+    margin-top: -55px;
 }
 .template-wrapper__ticket aside {
     width: 297px;
@@ -2138,7 +2139,7 @@ main {
     padding: 0;
 }
 .responsible-table_custom-checkbox label, .custom-checkbox_ver2 label, .custom-checkbox_without-label label {
-    position: static;
+    position: relative;
     padding-left: 0;
     width: 15px;
     height: 15px;
@@ -3190,7 +3191,7 @@ main {
 }
 .status {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 .status::before {
     content: "";
@@ -3198,6 +3199,7 @@ main {
     height: 16px;
     display: block;
     margin-right: 10px;
+    flex-shrink: 0;
 }
 .status-performed {
     color: #0e84cc;
@@ -3438,4 +3440,14 @@ main {
 .ticket__edit.open-popup .ticket__edit-popup {
     opacity: 1;
     visibility: visible;
+}
+.comments__comment-date {
+    margin-right: 5px;
+}
+.ticket__text-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+.client-card_not-box-shadow {
+    box-shadow: none;
 }

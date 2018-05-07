@@ -376,6 +376,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         addCommentWrapper.show(0);
         editBlock.slideUp(300);
         addCommentBlock.show(0);
+        $('.comments__add-comment .comments-edit').hide(0);
     })
 })();
 

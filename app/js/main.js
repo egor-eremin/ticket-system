@@ -89,16 +89,16 @@ function addTabs(tabbed_selector) {
         }
 })();
 (function addPopupOtherMenu() {
-    $('.comments__other').on('click', function () {
-       if ($(this).hasClass('open-popup')) {
-           $(this).removeClass('open-popup');
-           $('.close-wrapper-for-comments').remove();
-       } else {
-           $(this).addClass('open-popup');
-           $('body').append('<div class="close-wrapper-for-comments"></div>');
-       }
+    $(document).on('click', '.comments__other', function () {
+        if ($(this).hasClass('open-popup')) {
+            $(this).removeClass('open-popup');
+            $('.close-wrapper-for-comments').remove();
+        } else {
+            $(this).addClass('open-popup');
+            $('body').append('<div class="close-wrapper-for-comments"></div>');
+        }
     });
-    
+
     $(document).on('click', '.close-wrapper-for-comments', function () {
         $('.comments__other').removeClass('open-popup');
         $(this).remove();
@@ -342,8 +342,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
     })();
 
 (function OpenEditComments() {
-    $('.comments__answer, .other-menu__edit, .add-comment').on('click', function () {
-
+    $(document).on('click', '.comments__answer, .other-menu__edit, .add-comment', function () {
         var thisEditBlock = $(this).parents('.comments__item').find('.comments-edit');
         var thisItem = $(this).parents('.comments__item-wrapper');
         var addCommentBlock = $('.comments__add-comment');
@@ -351,22 +350,24 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         var addCommentBlockCommentsEdit = $('.comments__add-comment .comments-edit');
         var allCommentEdit = $('.comments-edit');
 
-            if ($(this).hasClass('other-menu__edit')) {
-                thisEditBlock.slideDown(300);
-                addCommentBlock.slideUp(300);
-                addCommentBlockCommentsEdit.find('.comments-edit__field').empty();
-            } else if ($(this).hasClass('comments__answer')) {
-                var commentsTitle = $(this).siblings('.comments__title').text();
-                    addCommentBlock.show(0);
-                allCommentEdit.slideUp(300);
-                addCommentBlockWrapper.hide(0);
-                addCommentBlockCommentsEdit.slideDown(300);
-                addCommentBlockCommentsEdit.find('.comments-edit__field').text($.trim(commentsTitle) + ', ').focus();
-                $('html, body').animate({ scrollTop: $('.comments__add-comment').offset().top }, 500);
-            } else if ($(this).hasClass('add-comment')) {
-                thisItem.hide(0);
-                thisEditBlock.slideDown(300);
-            }
+        if ($(this).hasClass('other-menu__edit')) {
+            thisEditBlock.slideDown(300);
+            thisEditBlock.find('.comments-edit__field').focus();
+            addCommentBlock.slideUp(300);
+            addCommentBlockCommentsEdit.find('.comments-edit__field').empty();
+        } else if ($(this).hasClass('comments__answer')) {
+            var commentsTitle = $(this).siblings('.comments__title').text();
+            addCommentBlock.show(0);
+            allCommentEdit.slideUp(300);
+            addCommentBlockWrapper.hide(0);
+            addCommentBlockCommentsEdit.slideDown(300);
+            addCommentBlockCommentsEdit.find('.comments-edit__field').text($.trim(commentsTitle) + ', ').focus();
+            $('html, body').animate({ scrollTop: $('.comments__add-comment').offset().top }, 500);
+        } else if ($(this).hasClass('add-comment')) {
+            thisItem.hide(0);
+            thisEditBlock.slideDown(300);
+            thisEditBlock.find('.comments-edit__field').focus();
+        }
     });
 })();
 
@@ -461,7 +462,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         $('.preloder').removeClass('animated');
     });
     (function addPopupEditTicket() {
-        $('.ticket__edit').on('click', function () {
+        $(document).on('click', '.ticket__edit', function () {
             if ($(this).hasClass('open-popup')) {
                 $(this).removeClass('open-popup');
                 $('.close-wrapper-for-comments').remove();

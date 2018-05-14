@@ -1184,8 +1184,9 @@ main {
     padding: 6px 15px;
     font-size: 13px;
 }
-.ticket-body__button button + button {
-    margin-left: 25px;
+.ticket-body__button button {
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 .ticket-body__button {
     padding-top: 10px;
@@ -1365,6 +1366,7 @@ main {
     background-color: #f5f6f7;
     margin-bottom: 5px;
     box-shadow: -12px 12px 27px 0px rgba(0, 0, 0, 0.12);
+    position: relative;
 }
 .comments__item-avatar {
     margin-right: 24px;
@@ -3450,4 +3452,87 @@ main {
 }
 .client-card_not-box-shadow {
     box-shadow: none;
+}
+.ticket-page_check-box {
+    font-size: 14px;
+    color: #83838d;
+    margin-top: 13px;
+    margin-bottom: 0;
+}
+.comments__hide {
+    background-color: #ffedc0;
+}
+.comments__hide::before {
+    content: "\f070";
+    font-family: FontAwesome;
+    position: absolute;
+    right: 15px;
+    top: 33px;
+    font-size: 13px;
+    color: #7f7f7f;
+}
+.button-yellow {
+    color: #ffbf24;
+    border: 2px solid #ffbf24;
+}
+.button-yellow:hover {
+    color: #fff;
+    background-color: #ffbf24;
+}
+.button-purple {
+    color: #EB93FF;
+    border: 2px solid #EB93FF;
+}
+.button-purple:hover {
+    color: #fff;
+    background-color: #EB93FF;
+}
+.ticket-body__button .fas {
+    margin-left: 5px;
+}
+.ticket-body_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button_circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button_circle .fas {
+    margin-left: 0;
+}
+.button-play {
+    display: flex;
+    flex-wrap: wrap;
+}
+.button-grey {
+    color: #959595;
+    border: 2px solid #959595;
+}
+.button-grey:hover {
+    color: #fff;
+    background-color: #959595;
+}
+.change-time__item {
+    text-align: center;
+}
+.change-time__item:nth-child(1) {
+    padding-right: 5px;
+}
+.change-time__item:nth-child(2) {
+    padding-left: 5px;
+}
+.button_confirm-time {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 32px;
+}
+.ticket-information__recourse-item + .ticket-information__recourse-item {
+    margin-top: 16px;
 }

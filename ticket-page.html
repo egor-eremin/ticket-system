@@ -226,6 +226,12 @@
                             Категория: <a href="#">Контент</a>
                         </li>
                     </ul>
+                    <div class="custom-checkbox ticket-page_check-box custom-checkbox_client-card">
+                        <span class="check-status checked">Нужна помощь с выбором категории</span>
+                    </div>
+                    <div class="custom-checkbox ticket-page_check-box custom-checkbox_client-card">
+                        <span class="check-status not-checked">Нужна помощь с выбором категории</span>
+                    </div>
                 </div>
                 <div class="ticket-body__content border-bottom">
                     <p>
@@ -299,12 +305,49 @@
                 </div>
                 <div class="ticket-body__button">
                     <button id="open-edit-popup" class="button button-green button-small button__edit-ticket">
-                        Редактировать
+                        редактировать
                         <i class="fas fa-pencil-alt"></i>
                     </button>
                     <button class="button button-small button__close-ticket">
                         закрыть обращение
+                        <i class="fas fa-times"></i>
                     </button>
+                    <button class="button button-purple button-small">
+                        подтвердить время (1ч. 40мин.)
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+                <div class="ticket-body__button ticket-body_flex">
+                    <div class="button-play">
+                        <button class="button button_circle button-small">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="button button-grey button_circle button-small">
+                            <i class="fas fa-pause"></i>
+                        </button>
+                        <button class="button button-green button_circle button-small">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </div>
+                    <button class="button button-small button-yellow add-lead-time">время выполнения <i class="fas fa-clock"></i></button>
+                    <div class="modal-popup mfp-hide lead-time-popup">
+                        <div class="modal-popup__title">
+                            Укажите время выполнения
+                        </div>
+                        <div class="change-time">
+                            <label class="form-label change-time__item">
+                                <input class="hour-input form-input" type="text">
+                                ч.
+                            </label>
+                            <label class="form-label change-time__item">
+                                <input class="minutes-input form-input" type="text">
+                                мин.
+                            </label>
+                        </div>
+                        <button class="button button_confirm-time button-small">
+                            подтвердить
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="ticket-body__footer">
@@ -392,7 +435,7 @@
                                             </div>
                                         </div>
                                         <div class="comments-edit__button-wrapper">
-                                            <button class="button button-small button__background-grey">отмена</button>
+                                            <button class="button button-small button__background-grey cancel-button">отмена</button>
                                             <button class="button button-green button__background-grey button-small">отправить</button>
                                         </div>
                                     </div>
@@ -457,7 +500,7 @@
                                         </div>
                                     </div>
                                     <div class="comments-edit__button-wrapper">
-                                        <button class="button button-small button__background-grey">отмена</button>
+                                        <button class="button button-small button__background-grey cancel-button">отмена</button>
                                         <button class="button button-green button__background-grey button-small">отправить</button>
                                     </div>
                                 </div>
@@ -530,7 +573,80 @@
                                         </div>
                                     </div>
                                     <div class="comments-edit__button-wrapper">
-                                        <button class="button button-small button__background-grey">отмена</button>
+                                        <button class="button button-small button__background-grey cancel-button cancel-button">отмена</button>
+                                        <button class="button button-green button__background-grey button-small">отправить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comments__item comments__hide">
+                                <div class="comments__item-wrapper">
+                                    <div class="comments__item-avatar">
+                                        <img src="images/user-avatar.jpg" alt="avatar-icon">
+                                    </div>
+                                    <div class="comments__item-text">
+                                        <div class="comments__text-row comments__text-row_flex">
+                                            <div class="comments__title">
+                                                Эдуард Вартанян
+                                            </div>
+                                            <div class="comments__date">
+                                                <i class="far fa-clock"></i>
+                                                <div class="comments__comment-date">28.11.2017</div>
+                                                <div class="comments__comment-time">16:10</div>
+                                            </div>
+                                            <div class="comments__answer">
+                                                Ответить
+                                                <?xml version="1.0" encoding="iso-8859-1"?>
+                                                <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                 viewBox="0 0 497.01 497.01" style="enable-background:new 0 0 497.01 497.01;" xml:space="preserve">
+                                                <g>
+                                                    <g>
+                                                        <path d="M191.553,118.075V28.036L0,204.142l191.553,176.106v-81.005c185.827,4.923,280.365,147.827,281.313,149.293l13.212,20.438
+                                                            l4.721-23.861c4.12-20.832,6.212-42.245,6.212-63.654C497.01,219.243,383.058,121.305,191.553,118.075z M475.043,418.954
+                                                            c-34.87-42.043-133.024-139.529-293.337-139.534h-9.846v55.971L29.096,204.142l142.764-131.25v64.793h9.846
+                                                            c187.865,0,295.611,88.851,295.611,243.774C477.317,394.002,476.553,406.546,475.043,418.954z"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            </div>
+                                            <div class="comments__other">
+                                                <span class="comments__link">Ещё</span>
+                                                <div class="other-menu">
+                                                    <div class="other-menu__item other-menu__edit">Редактировать</div>
+                                                    <div class="other-menu__item">Удалить</div>
+                                                    <div class="other-menu__triangle"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comments__text-row comments__text-row_max-w">
+                                        <span class="comments__manager">
+                                            Оськина Екатерина
+                                        </span>
+                                            <span class="comments__text">
+                                            замечания по дизайну тикета: Уменьшить межстрочное расстояние - <a
+                                                    href="#">http://prntscr.com/he2vbn</a>
+                                            Насколько я понял - <a href="#">http://prntscr.com/he2vuf</a> - это уведомления об изменениях
+                                                в обращениях. Давай их сделаем более изящно. Примерно как в Битриксе - <a
+                                                    href="#">http://prntscr.com/he2w6h</a>
+                                                Пока больше нет замечаний, можно продолжать.
+                                        </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comments-edit">
+                                    <div class="comments-edit__text">
+                                        <textarea name="edit-comment" class="comments-edit__field"></textarea>
+                                    </div>
+                                    <div class="comments-edit__edit-bar">
+                                        <div class="comments-edit__edit-bar-item hide-comment">
+                                            <input type="checkbox" class="hide-comment__input" id="input-hide">
+                                            <label for="input-hide" class="comments-edit-label hide-comment__label">
+                                                <i class="fas fa-eye"></i><i class="fas fa-eye-slash"></i> скрыть для заказчика
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="comments-edit__button-wrapper">
+                                        <button class="button button-small button__background-grey cancel-button cancel-button">отмена</button>
                                         <button class="button button-green button__background-grey button-small">отправить</button>
                                     </div>
                                 </div>
@@ -559,7 +675,7 @@
                                         </div>
                                     </div>
                                     <div class="comments-edit__button-wrapper">
-                                        <button class="button button-small button__background-grey">отмена</button>
+                                        <button class="button button-small button__background-grey cancel-button">отмена</button>
                                         <button class="button button-green button__background-grey button-small">отправить</button>
                                     </div>
                                 </div>
@@ -905,6 +1021,7 @@
                     Отмена
                 </button>
             </div>
+
         </form>
     </div>
 </main>

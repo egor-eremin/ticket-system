@@ -354,14 +354,14 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             thisEditBlock.slideDown(300);
             thisEditBlock.find('.comments-edit__field').focus();
             addCommentBlock.slideUp(300);
-            addCommentBlockCommentsEdit.find('.comments-edit__field').empty();
+            addCommentBlockCommentsEdit.find('.comments-edit__field').val();
         } else if ($(this).hasClass('comments__answer')) {
             var commentsTitle = $(this).siblings('.comments__title').text();
             addCommentBlock.show(0);
             allCommentEdit.slideUp(300);
             addCommentBlockWrapper.hide(0);
             addCommentBlockCommentsEdit.slideDown(300);
-            addCommentBlockCommentsEdit.find('.comments-edit__field').text($.trim(commentsTitle) + ', ').focus();
+            addCommentBlockCommentsEdit.find('.comments-edit__field').val($.trim(commentsTitle) + ', ').focus();
             $('html, body').animate({ scrollTop: $('.comments__add-comment').offset().top }, 500);
         } else if ($(this).hasClass('add-comment')) {
             thisItem.hide(0);
@@ -372,17 +372,16 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
 })();
 
 (function canselButton() {
-    $('.comments-edit__button-wrapper').on('click', function () {
+    $(document).on('click','.cancel-button', function () {
         var editBlock = $(this).parents('.comments-edit');
         var addCommentBlock = $('.comments__add-comment');
         var addCommentWrapper = $('.comments__add-comment .comments__item-wrapper');
-
         addCommentWrapper.show(0);
-        editBlock.slideUp(300);
+        // editBlock.slideUp(300);
+        $('.comments-edit').slideUp(300);
         addCommentBlock.show(0);
-        $('.comments__add-comment .comments-edit').hide(0);
-        $('.comments__add-comment .comments-edit__field').empty();
-    })
+        $('.comments-edit__field').val('');
+    });
 })();
 
 (function callbackModal() {
@@ -475,6 +474,14 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         $(document).on('click', '.close-wrapper-for-comments', function () {
             $('.ticket__edit').removeClass('open-popup');
             $(this).remove();
+        });
+    })();
+    (function showLeadTimeModal() {
+        $('.add-lead-time').magnificPopup({
+            items: {
+                src: '.lead-time-popup'
+            },
+            type: 'inline',
         });
     })();
 });

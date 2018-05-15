@@ -3536,3 +3536,7 @@ main {
 .ticket-information__recourse-item + .ticket-information__recourse-item {
     margin-top: 16px;
 }
+.menu-saidbar__sub-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+}

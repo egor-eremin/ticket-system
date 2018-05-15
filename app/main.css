@@ -912,6 +912,8 @@ h2 {
 }
 .open-tickets__item {
     margin-bottom: 18px;
+    display: flex;
+    align-items: center;
 }
 .open-tickets__commit {
     display: inline-block;

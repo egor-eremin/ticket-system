@@ -484,6 +484,12 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             type: 'inline',
         });
     })();
+    (function hideFile() {
+        $(document).on('click', '.del-icon', function () {
+           var thisParent = $(this).parents('.ticket-body__files-item');
+            thisParent.hide(300);
+        });
+    })();
 });
 BX.ready(function(){
     loader = BX('preloder');

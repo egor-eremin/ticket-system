@@ -3550,3 +3550,15 @@ main {
     border-radius: 20px;
     transition: .3s ease-in-out;
 }
+.old-comment {
+    background-color: #edfbff;
+    text-align: center;
+    color: #809aba;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.old-comment a:hover {
+    text-decoration: underline;
+}

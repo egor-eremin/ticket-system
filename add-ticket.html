@@ -14,6 +14,7 @@
     <link href="app/css/tooltipster.bundle.css" rel="stylesheet">
     <link href="app/css/select2.css" rel="stylesheet">
     <link href="app/css/datepicker.min.css" rel="stylesheet">
+    <link href="app/css/jquery.dm-uploader.min.css" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="app/main.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/favicon.png"/>
@@ -201,6 +202,29 @@
                         <div class="add-form__item">
                             <textarea required placeholder="Введите текст обращения:" name="ticket-text"></textarea>
                         </div>
+
+                        <!-- Our markup, the important part here! -->
+                        <div id="drag-and-drop-zone" class="dm-uploader p-5">
+                            <h3 class="mb-5 mt-5 text-muted">Drag &amp; drop files here</h3>
+
+                            <div class="btn btn-primary btn-block mb-5">
+                                <span>Open the file Browser</span>
+                                <input type="file" title='Click to add Files' />
+                            </div>
+                        </div><!-- /uploader -->
+
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    File List
+                                </div>
+
+                                <ul class="list-unstyled p-2 d-flex flex-column col" id="files">
+                                    <li class="text-muted text-center empty">No files uploaded.</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="add-form__item add-form__item_with-margin">
                             <div class="custom-input-file">
                                 <input multiple type="file" name="additional-file" id="additional-file-input">
@@ -412,6 +436,8 @@
 <script src="app/js/jquery.mask.min.js"></script>
 <script src="app/js/select2.min.js"></script>
 <script src="app/js/datepicker.min.js"></script>
+<script src="app/js/demo-ui.js"></script>
+<script src="app/js/jquery.dm-uploader.min.js"></script>
 <script src="app/js/main.js"></script>
 </body>
 </html>

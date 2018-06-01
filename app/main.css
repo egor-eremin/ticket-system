@@ -650,16 +650,16 @@ b {
 }
 .notice__new-notice {
     position: absolute;
-    width: 14px;
-    height: 14px;
+    width: 17px;
+    height: 17px;
     border-radius: 50%;
     color: #fff;
     background-color: #f24841;
     font-weight: 700;
-    font-size: 7px;
-    right: -2px;
-    bottom: 0;
-    line-height: 14px;
+    font-size: 9px;
+    right: -5px;
+    bottom: -3px;
+    line-height: 17px;
     vertical-align: middle;
     text-align: center;
 }
@@ -889,11 +889,11 @@ h2 {
     padding-top: 71px;
     flex-shrink: 0;
 }
-.open-tickets__title {
+.open-tickets__title, .open-tickets__close-ticket {
     font-weight: 700;
     margin-bottom: 13px;
 }
-.open-tickets__title a {
+.open-tickets__title a, .open-tickets__close-ticket a {
     text-decoration: underline;
     color: #818181;
 }
@@ -933,12 +933,12 @@ h2 {
     display: inline;
     margin-right: 6px;
 }
-.open-tickets__close-ticket {
-    padding: 0 30px;
-    color: #818181;
-    font-weight: 700;
-    font-size: 14px;
-}
+/*.open-tickets__close-ticket {*/
+    /*padding: 0 30px;*/
+    /*color: #818181;*/
+    /*font-weight: 700;*/
+    /*font-size: 14px;*/
+/*}*/
 .open-tickets__close-ticket a {
     text-decoration: underline;
 }
@@ -1778,7 +1778,9 @@ main {
 .form-label__datapicker {
     position: relative;
 }
-.form-label__datapicker svg, .finalization__date.finalization__cell-add svg {
+.deadline-datapicker-wrapper > svg,
+.finalization__date.finalization__cell-add svg,
+.form-label__datapicker > svg {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -1786,7 +1788,10 @@ main {
     top: 50%;
     transform: translateY(-50%);
 }
-.form-label__datapicker path, .form-label__datapicker polygon {
+.deadline-datapicker-wrapper > path,
+.form-label__datapicker > svg path,
+.form-label__datapicker > svg polygon,
+.form-label__datapicker polygon {
     fill: rgb(124, 124, 124);
 }
 .datepicker--nav-title i {
@@ -3192,7 +3197,7 @@ main {
 }
 .status {
     display: flex;
-    align-items: flex-start;
+    align-items: baseline;
 }
 .status::before {
     content: "";
@@ -3221,7 +3226,7 @@ main {
     background: url("../images/status-preparation.svg") no-repeat;
 }
 .status-confirmation {
-    color: #b3e80f;
+    color: #7fb439;
 }
 .status-confirmation::before {
     background: url("../images/status-confirmation.svg") no-repeat;
@@ -3595,6 +3600,68 @@ hr {
 }
 .dm-uploader.active {
     border-color: red;
-
     border-style: solid;
+}
+.datepicker--cell.-current-,
+.datepicker--cell.-selected-,
+.datepicker--cell-day.-focus- {
+    border: 1px solid #5abae7;
+    background-color: #f4ffff;
+    border-radius: 50%;
+}
+.datepicker--cell.-selected-,
+.datepicker--cell-day.-focus- {
+    background-color: #5abae7;
+    color: #fff;
+}
+.datepicker--cells {
+    align-items: center;
+}
+.datepicker--nav-action, .datepicker--cell {
+    border-radius: 50%;
+}
+.datepicker--time {
+    background-color: #70ccf1;
+}
+.datepicker--time-current {
+    color: #fff;
+}
+input[type=range]::-webkit-slider-thumb {
+    border-radius: 50% !important;
+    border: none !important;
+}
+input[type=range]::-moz-range-thumb {
+    border-radius: 50% !important;
+    border: none !important;
+}
+input[type=range]::-ms-thumb {
+    border-radius: 50% !important;
+    border: none !important;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    border: none !important;
+    background-color: #ffff !important;
+}
+input[type=range]::-moz-range-track {
+    border: none !important;
+    background-color: #ffff !important;
+}
+.datepicker--time-current-hours.-focus-,
+.datepicker--time-current-minutes.-focus- {
+    background-color: #fff !important;
+    color: #70ccf1 !important;
+}
+.datepicker--cell {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+}
+.datepicker--time-row input[type=range]:active::-webkit-slider-thumb {
+    background-color: #fff !important;
+}
+.datepicker--time-row input[type=range]:active::-moz-range-thumb {
+    background-color: #fff !important;
+}
+.datepicker--time-row input[type=range]:active::-ms-thumb {
+    background-color: #fff !important;
 }

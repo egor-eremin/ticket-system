@@ -203,27 +203,62 @@
                             <textarea required placeholder="Введите текст обращения:" name="ticket-text"></textarea>
                         </div>
 
-                        <!-- Our markup, the important part here! -->
-                        <div id="drag-and-drop-zone" class="dm-uploader p-5">
-                            <h3 class="mb-5 mt-5 text-muted">Drag &amp; drop files here</h3>
 
-                            <div class="btn btn-primary btn-block mb-5">
-                                <span>Open the file Browser</span>
-                                <input type="file" title='Click to add Files' />
-                            </div>
-                        </div><!-- /uploader -->
+                        <main role="main" class="container">
 
-                        <div class="col-md-6 col-sm-12">
-                            <div class="card h-100">
-                                <div class="card-header">
-                                    File List
+                            <h1>jQuery Ajax File Uploader Widget</h1>
+                            <p class="lead mb-4">
+                                A very lightweight Plugin for file uploading using ajax(async) and includes support for queues, progress tracking and drag and drop.
+                                This page demostrates the default basic setup/config.
+                            </p>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+
+                                    <!-- Our markup, the important part here! -->
+                                    <div id="drag-and-drop-zone" class="dm-uploader p-5">
+                                        <h3 class="mb-5 mt-5 text-muted">Drag &amp; drop files here</h3>
+
+                                        <div class="btn btn-primary btn-block mb-5">
+                                            <span>Open the file Browser</span>
+                                            <input type="file" title='Click to add Files' />
+                                        </div>
+                                    </div><!-- /uploader -->
+
                                 </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            File List
+                                        </div>
 
-                                <ul class="list-unstyled p-2 d-flex flex-column col" id="files">
-                                    <li class="text-muted text-center empty">No files uploaded.</li>
-                                </ul>
+                                        <ul class="list-unstyled p-2 d-flex flex-column col" id="files">
+                                            <li class="text-muted text-center empty">No files uploaded.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- /file list -->
+
+                            <div class="alert alert-info" role="alert">
+                                More setup demos on: <a href="https://danielmg.org/demo/java-script/uploader/basic">https://danielmg.org/demo/java-script/uploader/basic</a>
                             </div>
-                        </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            Debug Messages
+                                        </div>
+
+                                        <ul class="list-group list-group-flush" id="debug">
+                                            <li class="list-group-item text-muted empty">Loading plugin....</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> <!-- /debug -->
+
+                        </main>
+
 
                         <div class="add-form__item add-form__item_with-margin">
                             <div class="custom-input-file">

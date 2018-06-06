@@ -1350,6 +1350,9 @@ main {
     color: #fff;
     background-color: #2fc6f7;
 }
+.ticket-body__tabbed-item a path {
+    fill: #7f7f7f;
+}
 .ticket-body__tabbed-item a[aria-selected="true"] path, .ticket-body__tabbed-item a:hover path {
     fill: #fff;
 }
@@ -1780,7 +1783,8 @@ main {
 }
 .deadline-datapicker-wrapper > svg,
 .finalization__date.finalization__cell-add svg,
-.form-label__datapicker > svg {
+.form-label__datapicker > svg,
+.add-time-form .change-ticket-svg {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -1791,7 +1795,8 @@ main {
 .deadline-datapicker-wrapper > path,
 .form-label__datapicker > svg path,
 .form-label__datapicker > svg polygon,
-.form-label__datapicker polygon {
+.form-label__datapicker polygon,
+.add-time-datapicker polygon {
     fill: rgb(124, 124, 124);
 }
 .datepicker--nav-title i {
@@ -2485,11 +2490,13 @@ main {
 .change-ticket__item_new-flex {
    align-items: baseline;
 }
-.allocated__label {
+.allocated__label, .allocated-label {
    display: flex;
    flex-direction: row;
    align-items: center;
-   margin-right: 15px;
+}
+.allocated__label:not(:last-child), .allocated-label:not(:last-child) {
+    margin-right: 15px;
 }
 .allocated__title {
     margin-right: 15px;
@@ -2518,7 +2525,7 @@ main {
 .change-time .change-ticket__item {
     margin-right: 30px;
 }
-.allocated__label input {
+.allocated__label input, .allocated-label input {
     margin-right: 5px;
     text-align: center;
     width: 100px;
@@ -2673,7 +2680,7 @@ main {
     height: 2px;
     transform: translate(-50%, -50%) rotate(-45deg);
 }
-.form-item__bottom {
+.form-item__bottom, .form-item_button {
     text-align: center;
 }
 .modal-popup input.error {
@@ -3664,4 +3671,194 @@ input[type=range]::-moz-range-track {
 }
 .datepicker--time-row input[type=range]:active::-ms-thumb {
     background-color: #fff !important;
+}
+
+.dm-uploader {
+    border-width: 2px;
+    border-color: #5abae7;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.text-muted {
+    font-size: 14px;
+    color: #5abae7;
+}
+/*.dm-uploader .btn-primary input {*/
+/*position: static !important;*/
+/*width: auto !important;*/
+/*}*/
+.dm-uploader .btn-primary label {
+    display: inline-block;
+    color: #5abae7;
+    background-color: #effaff;
+    padding: 8px 15px;
+    border-radius: 15px;
+}
+#files {
+    overflow-y: inherit !important;
+}
+.separate-line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 1px;
+    background-color: #dadbdb;
+}
+.bg-success {
+    background-color: #70ccf1;
+    height: 6px;
+    border-radius: 20px;
+    color: transparent;
+    width: 55px;
+}
+.progress {
+    background-color: #ececec;
+    border-radius: 20px;
+    height: 6px;
+    width: 55px;
+    margin-top: 5px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.media-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.progress-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+}
+.progress .mb-2 {
+    margin-right: 10px;
+}
+.media {
+    margin-bottom: 13px;
+}
+.list-unstyled {
+    margin-top: 5px;
+}
+.list-file {
+    padding-bottom: 22px;
+}
+.progress-wrapper p.mb-2 {
+    padding-right: 30px;
+    position: relative;
+    flex-grow: 1;
+}
+.progress-wrapper p.mb-2::before, .progress-wrapper p.mb-2::after {
+    content: "";
+    display: block;
+    width: 11px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    right: 9px;
+    background-color: #c5c5c5;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+.progress-wrapper p.mb-2::before {
+    transform: translate(0, -50%) rotate(-45deg);
+}
+.progress-wrapper p.mb-2::after {
+    transform: translate(0, -50%) rotate(45deg);
+}
+.text-success {
+    display: none;
+}
+.progress-wrapper:hover p.mb-2::before, .progress-wrapper:hover p.mb-2::after {
+    opacity: 1;
+}
+.tabbed-time__item {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    position: relative;
+}
+.tabbed-time__item:hover .tabbed-time__edit-block {
+    opacity: 1;
+    visibility: visible;
+}
+.tabbed-time__date, .tabbed-time__hours {
+    padding: 23px 15px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+}
+.tabbed-time {
+    box-shadow: 0px 12px 27px 0px rgba(0, 0, 0, 0.12);
+}
+.tabbed-time__item_header {
+    border-bottom: 4px solid #e5e5e5;
+}
+.tabbed-time__hours_title, .tabbed-time__date_title {
+    font-weight: 700;
+}
+.date {
+    font-weight: 600;
+    margin-right: 4px;
+}
+.tabbed-time__item:not(:last-child) {
+    border-bottom: 1px solid #e5e5e5;
+}
+.tabbed-time__edit-block  {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+.tabbed-time__delete {
+    margin-left: 10px;
+}
+.tabbed-time__edit-block {
+    color: #c6cace;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-in-out;
+}
+.tabbed-time__edit, .tabbed-time__delete {
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.tabbed-time__edit:hover, .tabbed-time__delete:hover {
+    color: #acadaf;
+}
+.form-item_one-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-item_button {
+    margin-bottom: 0;
+}
+.add-time-form {
+    display: flex;
+    align-items: center;
+}
+.form-item_with-padding {
+    padding: 23px 15px;
+}
+.datapicker_for-add-date {
+    margin-left: 0;
+    border: 1px solid #dadbdb;
+}
+.add-time-datapicker {
+    position: relative;
+}
+.add-time-form .change-ticket-svg {
+    right: 24px;
+}
+.add-time-form__label {
+    margin-right: 10px;
+}
+.form-item_add-time {
+    padding-left: 15px;
 }

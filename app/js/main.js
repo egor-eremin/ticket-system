@@ -491,7 +491,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         });
     })();
     (function addTimeInformation() {
-        $('.tabbed-time__edit').on('click', function () {
+        $(document).on('click', '.tabbed-time__edit', function () {
             var thisTime = $(this).parents('.tabbed-time__item').find('.tabbed-time__hours');
             var massTime = thisTime.text().split(':');
             console.log(massTime[0]);
@@ -514,6 +514,13 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             minDate: new Date(),
             timepicker: true,
             position: "top left"
+        });
+    })();
+    (function deleteTabbedTime() {
+        $(document).on('click', '.tabbed-time__delete', function () {
+           var thisParent = $(this).parents('.tabbed-time__item');
+           console.log('sis');
+            thisParent.slideUp(300);
         });
     })();
 });

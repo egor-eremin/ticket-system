@@ -1605,7 +1605,7 @@ main {
     color: #83838d;
 }
 .add-form__item .select2 {
-    width: 406px !important;
+    width: 100% !important;
 }
 .form-label_for-category {
     flex-grow: 1;
@@ -1730,6 +1730,7 @@ main {
 }
 .custom-select-wrapper_mar-bottom {
     margin-bottom: 15px;
+    width: 100%;
 }
 .custom-checkbox input:focus ~ label:not(.error)::before {
     outline: 1px solid rgba(46, 198, 247, 0.33);
@@ -2856,7 +2857,7 @@ main {
 }
 .execution__number::after {
     background-color: #fff;
-    transition: transform 1s ease-in-out 1.2s;
+    transition: transform .5s ease-in-out 1.4s;
 }
 .execution__title {
     font-family: "Roboto Slab", sans-serif;
@@ -2900,55 +2901,55 @@ main {
     visibility: visible;
 }
 .execution__step.active .execution__text {
-    -webkit-animation: fade-in-right 1s ease-in-out 1.6s both;
-    animation: fade-in-right 1s ease-in-out 1.6s both;
+    -webkit-animation: fade-in-right .5s ease-in-out .6s both;
+    animation: fade-in-right .5s ease-in-out .6s both;
 }
 .execution__step_reverse.execution__step.active .execution__text {
-    -webkit-animation: fade-in-left 1s ease-in-out 1.6s both;
-    animation: fade-in-left 1s ease-in-out 1.6s both;
+    -webkit-animation: fade-in-left .5s ease-in-out .6s both;
+    animation: fade-in-left .5s ease-in-out .6s both;
 }
 .execution__step.active .execution__number {
-    -webkit-animation: fade-in 1s ease-in-out .3s both;
-    animation: fade-in 1s ease-in-out .3s both;
+    -webkit-animation: fade-in .3s ease-in-out .3s both;
+    animation: fade-in .3s ease-in-out .3s both;
 }
 .execution__step.active .execution__number::after {
     transform: translateY(100%);
 }
 .execution__step.active .creating-ticket img:first-child {
-    -webkit-animation: fade-in 1s ease-in-out 2s both;
-    animation: fade-in 1s ease-in-out 2s both;
+    -webkit-animation: fade-in .5s ease-in-out .6s both;
+    animation: fade-in .5s ease-in-out .6s both;
 }
 .execution__step.active .creating-ticket img:nth-child(2) {
-    -webkit-animation: scale 1s ease-in-out 2.5s both;
-    animation: scale 1s ease-in-out 2.5s both;
+    -webkit-animation: scale .5s ease-in-out 1.1s both;
+    animation: scale .5s ease-in-out 1.1s both;
 }
 .execution__step.active .reaction img:first-child {
-    -webkit-animation: fade-in 1s ease-in-out 2s both;
-    animation: fade-in 1s ease-in-out 2s both;
+    -webkit-animation: fade-in .5s ease-in-out .6s both;
+    animation: fade-in .5s ease-in-out .6s both;
 }
 .execution__step.active .reaction img:nth-child(2) {
-    -webkit-animation: fade-in 1s ease-in-out 2.5s both;
-    animation: fade-in 1s ease-in-out 2.5s both;
+    -webkit-animation: fade-in .5s ease-in-out 1.1s both;
+    animation: fade-in .5s ease-in-out 1.1s both;
 }
 .execution__step.active .implementation img:nth-child(1) {
-    -webkit-animation: fade-in 1s ease-in-out 2s both;
-    animation: fade-in 1s ease-in-out 2s both;
+    -webkit-animation: fade-in .5s ease-in-out .6s both;
+    animation: fade-in .5s ease-in-out .6s both;
 }
 .execution__step.active .implementation img:nth-child(2) {
-    -webkit-animation: fade-in 1s ease-in-out 2.5s both;
-    animation: fade-in 1s ease-in-out 2.5s both;
+    -webkit-animation: fade-in .5s ease-in-out 1s both;
+    animation: fade-in .5s ease-in-out 1s both;
 }
 .execution__step.active .implementation img:nth-child(3) {
-    -webkit-animation: fade-in 1s ease-in-out 3s both;
-    animation: fade-in 1s ease-in-out 3s both;
+    -webkit-animation: fade-in .5s ease-in-out 1.4s both;
+    animation: fade-in .5s ease-in-out 1.4s both;
 }
 .execution__step.active .all-good img:nth-child(1) {
-    -webkit-animation: fade-in 1s ease-in-out 2s both;
-    animation: fade-in 1s ease-in-out 2s both;
+    -webkit-animation: fade-in .5s ease-in-out .6s both;
+    animation: fade-in .5s ease-in-out .6s both;
 }
 .execution__step.active .all-good img:nth-child(2) {
-    -webkit-animation: scale 1s ease-in-out 2.5s both;
-    animation: scale 1s ease-in-out 2.5s both;
+    -webkit-animation: scale .5s ease-in-out 1.1s both;
+    animation: scale .5s ease-in-out 1.1s both;
 }
 .execution__step:last-child .execution__number::before,
 .execution__step:last-child .execution__number::after {
@@ -3111,7 +3112,7 @@ main {
     border-radius: 6px;
     padding: 21px 30px;
     position: absolute;
-    bottom: -11px;
+    bottom: 0;
     left: 0;
     width: 100%;
     transform: translateY(100%);
@@ -3147,14 +3148,16 @@ main {
     background-color: rgba(255, 255, 255, .7);
     flex: 1;
     opacity: 0;
-    z-index: -1;
-    transition: opacity .5s linear;
+    visibility: hidden;
+    z-index: 99999;
+    transition: opacity .5s linear, visibility .5s linear;
     top: 0;
     left: 0;
 }
 .preloder.animated {
-    z-index: 99999;
+    /*z-index: 99999;*/
     opacity: 1;
+    visibility: visible;
 }
 .submenu__item {
     margin-bottom: 5px;
@@ -3861,4 +3864,40 @@ input[type=range]::-moz-range-track {
 }
 .form-item_add-time {
     padding-left: 15px;
+}
+.status.close {
+    opacity: .3;
+}
+.callback__comment.error {
+    border-color: red;
+}
+.callback-link__icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin-right: 10px;
+}
+.callback-link__icon img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: .3s ease-in-out;
+    opacity: 0;
+}
+.callback-link__icon img:last-child {
+    opacity: 1;
+}
+.callback-link:hover img:last-child {
+    opacity: 0;
+}
+.callback-link:hover img:first-child {
+    opacity: 1;
+}
+.callback-link {
+    display: flex;
+    align-items: center;
 }

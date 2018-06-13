@@ -157,6 +157,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
 (function createCustomDatepicker() {
     $('.add-form__datapicker, .custom-datpicker').datepicker({
         minDate: new Date(),
+        autoClose: true,
     });
 })();
 (function createsEditInformation() {
@@ -333,6 +334,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         minDate: new Date(),
         timepicker: true,
         classes: 'deadline',
+        autoClose: true,
     });
         $('.deadline-datapicker-wrapper').append($('.deadline'));
 })();
@@ -488,6 +490,13 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         $(document).on('click', '.del-icon', function () {
            var thisParent = $(this).parents('.ticket-body__files-item');
             thisParent.hide(300);
+            thisParent.find('.fileDelete').val("Y");
+        });
+    })();
+    (function deleteFile() {
+        $(document).on('click','.progress-wrapper', function () {
+            var thisParent = $(this).parents('.media');
+            thisParent.slideUp(300);
         });
     })();
     (function addTimeInformation() {
@@ -513,7 +522,8 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         $('.add-date').datepicker({
             minDate: new Date(),
             timepicker: true,
-            position: "top left"
+            position: "top left",
+            autoClose: true,
         });
     })();
     (function deleteTabbedTime() {

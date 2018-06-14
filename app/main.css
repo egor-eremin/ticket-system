@@ -3901,3 +3901,17 @@ input[type=range]::-moz-range-track {
     display: flex;
     align-items: center;
 }
+.welcome-text {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.welcome-slider, .welcome-slider__item {
+    height: 100vh;
+}
+.welcome-slider__item {
+    background-repeat: no-repeat;
+    background-size: cover;
+}

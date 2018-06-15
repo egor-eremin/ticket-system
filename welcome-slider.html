@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=1280">
+    <title>MegaMirIt Тикетная система</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700|Roboto+Slab:300,400,700&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link href="app/css/animate.css" rel="stylesheet">
+    <link href="app/css/magnific-popup.css" rel="stylesheet">
+    <link href="app/css/font-awesome.min.css" rel="stylesheet">
+    <link href="app/css/gray.min.css" rel="stylesheet">
+    <link href="app/css/slick.css" rel="stylesheet">
+    <link href="app/css/tooltipster.bundle.css" rel="stylesheet">
+    <link href="app/css/select2.css" rel="stylesheet">
+    <link href="app/css/datepicker.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="app/main.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/favicon.png"/>
+</head>
+<body>
+<header class="header hedaer-main">
+    <div class="template-wrapper header__wrapper">
+        <div class="header__col">
+            <a href="/" class="main-logo">
+                <svg class="main-logo__svg" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="0 0 106 25.6" style="enable-background:new 0 0 106 25.6;" xml:space="preserve">
+    <style type="text/css">
+        .st0 {
+            fill: #FFFFFF;
+        }
+    </style>
+    <path class="st0" d="M6.8,12.5c0-1.3-0.2-2.2-0.4-2.7C6,9.2,5.5,8.9,4.6,8.9c-0.3,0-0.7,0-1,0C3.2,9,2.9,9.1,2.8,9.1v9.7H0V7.2
+        C0.6,7,1.2,6.9,2.1,6.8C3,6.6,3.9,6.6,4.8,6.6c0.9,0,1.5,0.1,2,0.3s0.9,0.5,1.3,0.9c0.2-0.1,0.4-0.3,0.7-0.4C9.2,7.2,9.4,7.1,9.8,7
+        c0.3-0.1,0.7-0.2,1-0.3c0.3-0.1,0.7-0.1,1.1-0.1c0.9,0,1.7,0.1,2.3,0.4c0.6,0.3,1.1,0.7,1.4,1.1c0.3,0.5,0.6,1.1,0.7,1.7
+        c0.1,0.7,0.2,1.4,0.2,2.2v6.8h-2.8v-6.3c0-1.3-0.2-2.2-0.4-2.7c-0.3-0.6-0.9-0.9-1.8-0.9c-0.4,0-0.9,0-1.3,0.2
+        C9.9,9.2,9.5,9.4,9.4,9.5c0.1,0.4,0.2,0.8,0.3,1.2c0,0.4,0,0.9,0,1.4v6.6H6.9v-6.3H6.8z M17.1,12.9c0-1.1,0.2-2,0.4-2.8
+        c0.3-0.8,0.7-1.4,1.3-2c0.5-0.6,1.1-0.9,1.8-1.1c0.7-0.3,1.4-0.4,2-0.4c1.7,0,2.9,0.5,3.9,1.5c0.9,1,1.4,2.6,1.4,4.6v0.5
+        c0,0.2,0,0.4,0,0.5h-8c0,0.9,0.4,1.7,1,2.2c0.6,0.6,1.5,0.8,2.6,0.8c0.7,0,1.3,0,1.8-0.2c0.6-0.1,1-0.3,1.3-0.4l0.4,2.3
+        c-0.2,0-0.4,0.2-0.6,0.2c-0.3,0.1-0.6,0.2-0.9,0.2c-0.3,0-0.7,0.1-1.1,0.2s-0.8,0-1.2,0c-1.1,0-2-0.2-2.8-0.4
+        c-0.8-0.3-1.4-0.8-2-1.3s-0.9-1.2-1.1-2C17.2,14.6,17.1,13.8,17.1,12.9z M25.1,11.6c0-0.4,0-0.7-0.2-1.1c-0.1-0.3-0.3-0.7-0.4-0.9
+        c-0.2-0.3-0.4-0.4-0.8-0.6c-0.3-0.2-0.7-0.2-1.1-0.2c-0.4,0-0.8,0-1.1,0.2c-0.3,0.2-0.6,0.4-0.9,0.6c-0.2,0.3-0.4,0.6-0.5,0.9
+        c-0.1,0.3-0.2,0.7-0.3,1.1L25.1,11.6L25.1,11.6L25.1,11.6z M38.9,17.6c0,1.9-0.5,3.3-1.4,4.2c-1,0.9-2.4,1.3-4.4,1.3
+        c-0.7,0-1.4,0-2.2-0.2c-0.7-0.1-1.3-0.3-1.9-0.5l0.5-2.4c0.5,0.2,1,0.3,1.6,0.5c0.6,0.1,1.3,0.2,2,0.2c1.1,0,1.9-0.2,2.4-0.7
+        c0.5-0.5,0.7-1.1,0.7-2v-0.4c-0.3,0.2-0.6,0.3-1.1,0.4c-0.4,0.1-0.9,0.2-1.5,0.2c-0.8,0-1.4-0.1-2.1-0.4c-0.6-0.2-1.1-0.6-1.6-1.1
+        c-0.4-0.5-0.8-1.1-1.1-1.8s-0.4-1.5-0.4-2.4s0.1-1.7,0.4-2.4c0.3-0.7,0.7-1.4,1.1-1.9C30.4,7.8,31,7.3,31.8,7
+        c0.7-0.3,1.5-0.4,2.5-0.4c0.9,0,1.8,0,2.6,0.2c0.9,0.1,1.5,0.3,2,0.4L38.9,17.6L38.9,17.6L38.9,17.6z M31.2,12.5
+        c0,1.1,0.3,2,0.8,2.6c0.5,0.6,1.1,0.9,2,0.9c0.4,0,0.9,0,1.3-0.2c0.4-0.1,0.7-0.3,0.9-0.4V9c-0.2,0-0.4-0.1-0.7-0.1
+        c-0.3,0-0.7,0-1.1,0c-1,0-1.8,0.3-2.3,1C31.5,10.5,31.2,11.4,31.2,12.5z M44.4,6.5c0.9,0,1.7,0.1,2.3,0.3c0.6,0.2,1.1,0.6,1.5,0.9
+        c0.4,0.4,0.7,0.9,0.8,1.5c0.2,0.6,0.2,1.2,0.2,2v7.2c-0.4,0.1-1.1,0.2-2,0.3c-0.9,0.1-1.8,0.2-2.9,0.2c-0.7,0-1.4,0-2-0.2
+        c-0.6-0.1-1.1-0.3-1.5-0.7c-0.4-0.3-0.8-0.7-1-1.2c-0.2-0.5-0.3-1.1-0.3-1.8c0-0.7,0.1-1.3,0.4-1.7c0.3-0.5,0.6-0.9,1.1-1.1
+        c0.4-0.3,1-0.5,1.6-0.7c0.6-0.1,1.2-0.2,1.9-0.2c0.3,0,0.6,0,0.9,0c0.3,0,0.7,0.1,1.1,0.2v-0.4c0-0.3,0-0.6-0.1-0.9
+        c0-0.3-0.2-0.6-0.4-0.8c-0.2-0.2-0.4-0.4-0.8-0.5c-0.3-0.1-0.7-0.2-1.1-0.2c-0.7,0-1.2,0-1.8,0.1c-0.6,0.1-1,0.2-1.3,0.3l-0.3-2.3
+        c0.3-0.1,0.9-0.2,1.5-0.4C42.9,6.6,43.6,6.5,44.4,6.5z M44.6,16.8c0.9,0,1.5,0,2-0.1v-3c-0.2,0-0.4-0.1-0.7-0.1c-0.3,0-0.6,0-0.9,0
+        c-0.3,0-0.6,0-0.9,0c-0.3,0-0.6,0.1-0.9,0.3c-0.3,0.1-0.4,0.3-0.6,0.5c-0.2,0.2-0.2,0.5-0.2,0.9c0,0.7,0.2,1.1,0.6,1.4
+        C43.4,16.7,43.9,16.8,44.6,16.8z"/>
+    <path class="st0" d="M57.7,12.5c0-1.3-0.2-2.2-0.4-2.7c-0.3-0.6-0.9-0.9-1.8-0.9c-0.3,0-0.7,0-1,0c-0.4,0-0.7,0.1-0.9,0.1v9.7h-2.8
+        V7.2c0.6-0.2,1.2-0.3,2.1-0.4c0.9-0.1,1.8-0.2,2.7-0.2c0.9,0,1.5,0.1,2,0.3c0.6,0.2,0.9,0.5,1.3,0.9c0.2-0.1,0.4-0.3,0.7-0.4
+        C60,7.2,60.3,7.1,60.6,7c0.3-0.1,0.7-0.2,1-0.3c0.3-0.1,0.7-0.1,1.1-0.1c0.9,0,1.7,0.1,2.3,0.4c0.6,0.3,1.1,0.7,1.4,1.1
+        c0.3,0.5,0.6,1.1,0.7,1.7c0.1,0.7,0.2,1.4,0.2,2.2v6.8h-2.8v-6.3c0-1.3-0.2-2.2-0.4-2.7c-0.3-0.6-0.9-0.9-1.8-0.9
+        c-0.4,0-0.9,0-1.3,0.2c-0.4,0.2-0.7,0.3-0.9,0.4c0.1,0.4,0.2,0.8,0.3,1.2c0,0.4,0,0.9,0,1.4v6.6h-2.8v-6.3H57.7z M71.7,3.7
+        c0,0.5-0.2,0.9-0.5,1.2c-0.3,0.3-0.7,0.4-1.2,0.4c-0.5,0-0.9-0.2-1.2-0.4c-0.3-0.3-0.5-0.7-0.5-1.2c0-0.6,0.2-0.9,0.5-1.3
+        C69.1,2.1,69.5,2,70,2c0.4,0,0.9,0.2,1.2,0.4C71.5,2.8,71.7,3.2,71.7,3.7z M68.6,6.8h2.8v12h-2.8V6.8z M79.5,9.2
+        c-0.2,0-0.3,0-0.7-0.2c-0.4,0-0.9-0.1-1.4-0.1c-0.3,0-0.6,0-1,0.1c-0.3,0-0.6,0.1-0.7,0.2v9.6h-2.8V7.4c0.6-0.2,1.2-0.4,2-0.6
+        c0.8-0.2,1.7-0.3,2.6-0.3c0.2,0,0.4,0,0.7,0c0.2,0,0.5,0,0.7,0.1c0.2,0.1,0.5,0.1,0.7,0.1c0.2,0,0.4,0.1,0.6,0.2L79.5,9.2z"/>
+    <path class="st0" d="M90.3,5c0-0.4-0.3-0.8-0.7-0.8S88.8,4.6,88.8,5c0,0.4,0.3,0.7,0.8,0.7C89.9,5.7,90.3,5.5,90.3,5z"/>
+    <path class="st0" d="M93.3,0c-7.1,0-12.8,5.7-12.8,12.8c0,4.3,2.1,8,5.3,10.3l3.4-3.4V6.9c0-0.4-0.1-0.6-0.4-0.7
+        c-0.4-0.2-0.7-0.7-0.7-1.1c0-0.7,0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3c0,0.5-0.3,0.9-0.7,1.1c-0.2,0.1-0.4,0.3-0.4,0.6V20l0,0l-3.5,3.5
+        c2,1.3,4.4,2,6.9,2c7.1,0,12.8-5.7,12.8-12.8C106.1,5.7,100.4,0,93.3,0z M88.6,8v10.5H88V8H88.6z M91.1,18.6h-0.6V8.1h0.6V18.6z
+         M98.8,18.6c-0.5,0.2-1,0.2-1.6,0.2c-0.7,0-1.3-0.1-1.8-0.3c-0.4-0.2-0.9-0.4-1.1-0.9c-0.3-0.4-0.5-0.9-0.6-1.3
+        c-0.1-0.6-0.2-1.1-0.2-1.8V5.2l1.9-0.3v3.3h4v1.6h-4v4.9c0,0.6,0,0.9,0.1,1.3c0,0.3,0.2,0.6,0.4,0.9c0.2,0.2,0.4,0.3,0.6,0.4
+        c0.2,0,0.6,0.1,0.9,0.1c0.6,0,1,0,1.4-0.2c0.3-0.1,0.6-0.2,0.7-0.3l0.4,1.5C99.7,18.4,99.3,18.4,98.8,18.6z"/>
+    </svg>
+                <span class="main-logo__text">
+                                Поддержка сайтов
+                            </span>
+            </a>
+            <nav class="main-nav">
+                <ul class="main-nav__list">
+                    <li class="main-nav__item">
+                        <a href="#">
+                            Обращения
+                        </a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#">
+                            Документы
+                        </a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#">
+                            Отчеты
+                        </a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#">
+                            Как мы работаем
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header__col">
+            <div class="header__information">
+                <div class="header__information-item">
+                        <span class="header__information-title">
+                            Оплаченый период:
+                        </span>
+                    <span class="header__information-text">сентябрь 2017</span>
+                </div>
+                <div class="header__information-item">
+                        <span class="header__information-title">
+                            Остаток часов:
+                        </span>
+                    <span class="header__information-text">1 ч. 23 мин.</span>
+                </div>
+                <div class="submenu submenu_flex">
+                    <div class="header__information-item submenu__item">
+                        <span class="header__information-title header__information-title_left">
+                            Остаток:
+                        </span>
+                    </div>
+                    <div class="header__information-item submenu__item">
+                        <span class="header__information-title">
+                            Обслуживание:
+                        </span>
+                        <span class="header__information-text header__information-text_bold">3 ч.</span>
+                    </div>
+                    <div class="header__information-item submenu__item">
+                        <span class="header__information-title">
+                            Доработки:
+                        </span>
+                        <span class="header__information-text header__information-text_bold">30 мин.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="user-information">
+                <a href="#">
+                    <img class="user-information__img" src="images/avatar.png" alt="avatar">
+                    Алиса Сазонова
+                </a>
+                <div class="submenu sign-in">
+                    <div class="sign-in__title">Личный кабинет</div>
+                    <div class="sign-in__item sign-in__settings">
+                        <a href="#">Настройки</a>
+                    </div>
+                    <div class="sign-in__item sign-in__escape">
+                        <a href="#">Выйти</a>
+                    </div>
+                </div>
+            </div>
+            <div class="notice">
+                <div class="notice__logo">
+                    <i class="far fa-bell"></i>
+                    <div class="notice__new-notice">
+                        17
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="menu-saidbar">
+    <div class="menu-saidbar__close">
+        <div class="menu-saidbar__close-wrapper">
+
+        </div>
+    </div>
+    <div class="menu-saidbar__menu">
+        <div class="menu-saidbar__wrapper">
+            <div class="menu-saidbar__header">
+                <div class="menu-saidbar__title new-notice">
+                    Уведомления
+                </div>
+                <div class="menu-saidbar__close-button">
+                    <span class="menu-saidbar__close-span"></span>
+                    <span class="menu-saidbar__close-span"></span>
+                </div>
+            </div>
+            <div class="menu-saidbar__notice">
+                <div class="menu-saidbar__notice-item notice-new">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        <div class="menu-saidbar__sub-title">
+                            Обращение от Flyboots
+                        </div>
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item notice-new">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+                <div class="menu-saidbar__notice-item">
+                    <div class="menu-saidbar__notice-title">
+                        Приближается крайний срок
+                    </div>
+                    <div class="menu-saidbar__notice-text">
+                        Крайний срок обращения "Несвободный тикет №101" (ООО "Фанат") истечёт <b>06.12.2017</b>
+                    </div>
+                    <div class="menu-saidbar__notice-time">
+                        <div class="menu-saidbar__notice-clock">16:27:12</div>
+                        <div class="menu-saidbar__notice-date">06.12.2017</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<main class="main-block hidden">
+    <div class="template-wrapper">
+        <h1>
+            Открытые обращения <span class="quantity-posts">15</span>
+        </h1>
+        <a href="#" class="button button_new-message">
+            Создать новое обращение
+        </a>
+    </div>
+</main>
+<div class="welcome-text active">
+    <div class="welcome-slider" id="init-welcome-slider">
+        <div class="welcome-slider__item">
+            <div class="template-wrapper welcome-wrapper">
+                <div class="welcome-slider__text">
+                    <div class="welcome-slider__title">
+                        Добрый день, Елизавета,<br>
+                        <span class="welcome-slider__small-title">
+        команда <span class="title-blue">ММИТ</span> приветствует Вас!
+        </span>
+                    </div>
+                    <div class="welcome-slider__text-block welcome-slider__text-block_icon check-icon">
+                        Мы готовы выполнить <b>Вашу первую задачу!</b>
+                        Чтобы её выставить, создайте новое обращение
+                    </div>
+                    <div class="welcome-slider__text-block welcome-slider__text-block_icon exclamation">
+                        Обращаем Ваше внимание,
+                        что мы работаем с 04:00 до 13:00 МСК.
+                    </div>
+                    <div class="welcome-slider__cat">
+                        <img src="images/welcome-cat.png" alt="cat">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="welcome-slider__item">-->
+            <!--<div class="template-wrapper welcome-wrapper">-->
+                <!--<div class="welcome-slider__text">-->
+                    <!--<div class="welcome-slider__title">-->
+                        <!--В честь нашего знакомства-->
+                    <!--</div>-->
+                    <!--<div class="welcome-slider__text-block welcome-slider__text-block_text-center">-->
+                        <!--мы дарим Вам 3000р<br>-->
+                        <!--на ваш счет-->
+                    <!--</div>-->
+                    <!--<div class="welcome-slider__text-block welcome-slider__text-block_text-center">-->
+                        <!--<img src="images/3000-bonus.png" alt="3000 bonus">-->
+                    <!--</div>-->
+                    <!--<div class="welcome-slider__text-block welcome-slider__text-block_text-center">-->
+                        <!--Это 2 часа работы наших специалистов-->
+                    <!--</div>-->
+                    <!--<div class="welcome-slider__cat">-->
+                        <!--<img src="images/welcome-cat1.png" alt="cat">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="welcome-slider__item">-->
+            <!--<div class="template-wrapper welcome-wrapper">-->
+                <!--<div class="welcome-slider__text">-->
+                    <!--<div class="welcome-slider__title">-->
+                        <!--Каким образом будут<br> расходоваться часы-->
+                    <!--</div>-->
+                    <!--<div class="welcome-slider__text-block welcome-slider__text-block_big welcome-slider__text-block_text-center">-->
+                        <!--и как вообще строится работа с нами,<br>-->
+                        <!--можете узнать на странице<br>-->
+                        <!--<span class="title-blue">-->
+        <!--«как мы работаем»-->
+        <!--</span>-->
+                    <!--</div>-->
+                    <!--<div class="welcome-slider__cat">-->
+                        <!--<img src="images/welcome-cat.png" alt="cat">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="welcome-slider__item step-4">-->
+            <!--<div class="template-wrapper welcome-wrapper">-->
+                <!--<div class="welcome-slider__text">-->
+                    <!--<div class="welcome-slider__title welcome-slider__title_step-4">-->
+                        <!--Обратная связь<br>-->
+                    <!--</div>-->
+                    <!--<div class="welcome-slider__prev-text">-->
+                        <!--Мы постоянно работаем над улучшением нашего сервиса.-->
+                    <!--</div>-->
+                    <!--<div class="welcome-slider__text-block">-->
+                        <!--И поэтому мы с радостью предоставим Вам в подарок-->
+                        <!--бесплатные часы в обмен на любую информацию,-->
+                        <!--которая нам поможет стать лучше:-->
+                    <!--</div>-->
+                    <!--<ul class="welcome-slider__list">-->
+                        <!--<li class="welcome-slider__list-item">-->
+                            <!--рекомендации по улучшению личного кабинета;-->
+                        <!--</li>-->
+                        <!--<li class="welcome-slider__list-item">-->
+                            <!--описание функций, которых Вам не хватает;-->
+                        <!--</li>-->
+                        <!--<li class="welcome-slider__list-item">-->
+                            <!--описание возникшей ошибки;-->
+                        <!--</li>-->
+                        <!--<li class="welcome-slider__list-item">-->
+                            <!--конструктивный отзыв о нашей работе.-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                    <!--<div class="welcome-slider__text-block">-->
+                        <!--Напишите нам через форму обратной связи внизу страницы.<br>-->
+                        <!--Или позвоните по телефону (3952) 68-22-27.<br>-->
+                        <!--Мы обязательно примем во внимание любую обратную связь.<br>-->
+                        <!--и сделаем работу с нами максимально простой и удобной.-->
+                    <!--</div>-->
+                    <!--<div class="welcome-slider__text-block welcome-slider__text-block_text-center">-->
+                        <!--Спасибо!-->
+                    <!--</div>-->
+                    <!--<a href="#" class="button button_step4 button-green">-->
+                        <!--Начать работу-->
+                    <!--</a>-->
+                    <!--<div class="welcome-slider__cat">-->
+                        <!--<img src="images/welcome-cat.png" alt="cat">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<footer class="main-footer">
+    <div class="template-wrapper main-footer__wrapper">
+        <div class="main-footer__col">
+            <a href="/" class="main-logo">
+                <svg class="main-logo__svg" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106 25.6" style="enable-background:new 0 0 106 25.6;" xml:space="preserve">
+                <style type="text/css">
+        .st0 {
+            fill: #FFFFFF;
+        }
+    </style>
+                <path class="st0" d="M6.8,12.5c0-1.3-0.2-2.2-0.4-2.7C6,9.2,5.5,8.9,4.6,8.9c-0.3,0-0.7,0-1,0C3.2,9,2.9,9.1,2.8,9.1v9.7H0V7.2
+                    C0.6,7,1.2,6.9,2.1,6.8C3,6.6,3.9,6.6,4.8,6.6c0.9,0,1.5,0.1,2,0.3s0.9,0.5,1.3,0.9c0.2-0.1,0.4-0.3,0.7-0.4C9.2,7.2,9.4,7.1,9.8,7
+                    c0.3-0.1,0.7-0.2,1-0.3c0.3-0.1,0.7-0.1,1.1-0.1c0.9,0,1.7,0.1,2.3,0.4c0.6,0.3,1.1,0.7,1.4,1.1c0.3,0.5,0.6,1.1,0.7,1.7
+                    c0.1,0.7,0.2,1.4,0.2,2.2v6.8h-2.8v-6.3c0-1.3-0.2-2.2-0.4-2.7c-0.3-0.6-0.9-0.9-1.8-0.9c-0.4,0-0.9,0-1.3,0.2
+                    C9.9,9.2,9.5,9.4,9.4,9.5c0.1,0.4,0.2,0.8,0.3,1.2c0,0.4,0,0.9,0,1.4v6.6H6.9v-6.3H6.8z M17.1,12.9c0-1.1,0.2-2,0.4-2.8
+                    c0.3-0.8,0.7-1.4,1.3-2c0.5-0.6,1.1-0.9,1.8-1.1c0.7-0.3,1.4-0.4,2-0.4c1.7,0,2.9,0.5,3.9,1.5c0.9,1,1.4,2.6,1.4,4.6v0.5
+                    c0,0.2,0,0.4,0,0.5h-8c0,0.9,0.4,1.7,1,2.2c0.6,0.6,1.5,0.8,2.6,0.8c0.7,0,1.3,0,1.8-0.2c0.6-0.1,1-0.3,1.3-0.4l0.4,2.3
+                    c-0.2,0-0.4,0.2-0.6,0.2c-0.3,0.1-0.6,0.2-0.9,0.2c-0.3,0-0.7,0.1-1.1,0.2s-0.8,0-1.2,0c-1.1,0-2-0.2-2.8-0.4
+                    c-0.8-0.3-1.4-0.8-2-1.3s-0.9-1.2-1.1-2C17.2,14.6,17.1,13.8,17.1,12.9z M25.1,11.6c0-0.4,0-0.7-0.2-1.1c-0.1-0.3-0.3-0.7-0.4-0.9
+                    c-0.2-0.3-0.4-0.4-0.8-0.6c-0.3-0.2-0.7-0.2-1.1-0.2c-0.4,0-0.8,0-1.1,0.2c-0.3,0.2-0.6,0.4-0.9,0.6c-0.2,0.3-0.4,0.6-0.5,0.9
+                    c-0.1,0.3-0.2,0.7-0.3,1.1L25.1,11.6L25.1,11.6L25.1,11.6z M38.9,17.6c0,1.9-0.5,3.3-1.4,4.2c-1,0.9-2.4,1.3-4.4,1.3
+                    c-0.7,0-1.4,0-2.2-0.2c-0.7-0.1-1.3-0.3-1.9-0.5l0.5-2.4c0.5,0.2,1,0.3,1.6,0.5c0.6,0.1,1.3,0.2,2,0.2c1.1,0,1.9-0.2,2.4-0.7
+                    c0.5-0.5,0.7-1.1,0.7-2v-0.4c-0.3,0.2-0.6,0.3-1.1,0.4c-0.4,0.1-0.9,0.2-1.5,0.2c-0.8,0-1.4-0.1-2.1-0.4c-0.6-0.2-1.1-0.6-1.6-1.1
+                    c-0.4-0.5-0.8-1.1-1.1-1.8s-0.4-1.5-0.4-2.4s0.1-1.7,0.4-2.4c0.3-0.7,0.7-1.4,1.1-1.9C30.4,7.8,31,7.3,31.8,7
+                    c0.7-0.3,1.5-0.4,2.5-0.4c0.9,0,1.8,0,2.6,0.2c0.9,0.1,1.5,0.3,2,0.4L38.9,17.6L38.9,17.6L38.9,17.6z M31.2,12.5
+                    c0,1.1,0.3,2,0.8,2.6c0.5,0.6,1.1,0.9,2,0.9c0.4,0,0.9,0,1.3-0.2c0.4-0.1,0.7-0.3,0.9-0.4V9c-0.2,0-0.4-0.1-0.7-0.1
+                    c-0.3,0-0.7,0-1.1,0c-1,0-1.8,0.3-2.3,1C31.5,10.5,31.2,11.4,31.2,12.5z M44.4,6.5c0.9,0,1.7,0.1,2.3,0.3c0.6,0.2,1.1,0.6,1.5,0.9
+                    c0.4,0.4,0.7,0.9,0.8,1.5c0.2,0.6,0.2,1.2,0.2,2v7.2c-0.4,0.1-1.1,0.2-2,0.3c-0.9,0.1-1.8,0.2-2.9,0.2c-0.7,0-1.4,0-2-0.2
+                    c-0.6-0.1-1.1-0.3-1.5-0.7c-0.4-0.3-0.8-0.7-1-1.2c-0.2-0.5-0.3-1.1-0.3-1.8c0-0.7,0.1-1.3,0.4-1.7c0.3-0.5,0.6-0.9,1.1-1.1
+                    c0.4-0.3,1-0.5,1.6-0.7c0.6-0.1,1.2-0.2,1.9-0.2c0.3,0,0.6,0,0.9,0c0.3,0,0.7,0.1,1.1,0.2v-0.4c0-0.3,0-0.6-0.1-0.9
+                    c0-0.3-0.2-0.6-0.4-0.8c-0.2-0.2-0.4-0.4-0.8-0.5c-0.3-0.1-0.7-0.2-1.1-0.2c-0.7,0-1.2,0-1.8,0.1c-0.6,0.1-1,0.2-1.3,0.3l-0.3-2.3
+                    c0.3-0.1,0.9-0.2,1.5-0.4C42.9,6.6,43.6,6.5,44.4,6.5z M44.6,16.8c0.9,0,1.5,0,2-0.1v-3c-0.2,0-0.4-0.1-0.7-0.1c-0.3,0-0.6,0-0.9,0
+                    c-0.3,0-0.6,0-0.9,0c-0.3,0-0.6,0.1-0.9,0.3c-0.3,0.1-0.4,0.3-0.6,0.5c-0.2,0.2-0.2,0.5-0.2,0.9c0,0.7,0.2,1.1,0.6,1.4
+                    C43.4,16.7,43.9,16.8,44.6,16.8z"></path>
+                <path class="st0" d="M57.7,12.5c0-1.3-0.2-2.2-0.4-2.7c-0.3-0.6-0.9-0.9-1.8-0.9c-0.3,0-0.7,0-1,0c-0.4,0-0.7,0.1-0.9,0.1v9.7h-2.8
+                    V7.2c0.6-0.2,1.2-0.3,2.1-0.4c0.9-0.1,1.8-0.2,2.7-0.2c0.9,0,1.5,0.1,2,0.3c0.6,0.2,0.9,0.5,1.3,0.9c0.2-0.1,0.4-0.3,0.7-0.4
+                    C60,7.2,60.3,7.1,60.6,7c0.3-0.1,0.7-0.2,1-0.3c0.3-0.1,0.7-0.1,1.1-0.1c0.9,0,1.7,0.1,2.3,0.4c0.6,0.3,1.1,0.7,1.4,1.1
+                    c0.3,0.5,0.6,1.1,0.7,1.7c0.1,0.7,0.2,1.4,0.2,2.2v6.8h-2.8v-6.3c0-1.3-0.2-2.2-0.4-2.7c-0.3-0.6-0.9-0.9-1.8-0.9
+                    c-0.4,0-0.9,0-1.3,0.2c-0.4,0.2-0.7,0.3-0.9,0.4c0.1,0.4,0.2,0.8,0.3,1.2c0,0.4,0,0.9,0,1.4v6.6h-2.8v-6.3H57.7z M71.7,3.7
+                    c0,0.5-0.2,0.9-0.5,1.2c-0.3,0.3-0.7,0.4-1.2,0.4c-0.5,0-0.9-0.2-1.2-0.4c-0.3-0.3-0.5-0.7-0.5-1.2c0-0.6,0.2-0.9,0.5-1.3
+                    C69.1,2.1,69.5,2,70,2c0.4,0,0.9,0.2,1.2,0.4C71.5,2.8,71.7,3.2,71.7,3.7z M68.6,6.8h2.8v12h-2.8V6.8z M79.5,9.2
+                    c-0.2,0-0.3,0-0.7-0.2c-0.4,0-0.9-0.1-1.4-0.1c-0.3,0-0.6,0-1,0.1c-0.3,0-0.6,0.1-0.7,0.2v9.6h-2.8V7.4c0.6-0.2,1.2-0.4,2-0.6
+                    c0.8-0.2,1.7-0.3,2.6-0.3c0.2,0,0.4,0,0.7,0c0.2,0,0.5,0,0.7,0.1c0.2,0.1,0.5,0.1,0.7,0.1c0.2,0,0.4,0.1,0.6,0.2L79.5,9.2z"></path>
+                <path class="st0" d="M90.3,5c0-0.4-0.3-0.8-0.7-0.8S88.8,4.6,88.8,5c0,0.4,0.3,0.7,0.8,0.7C89.9,5.7,90.3,5.5,90.3,5z"></path>
+                <path class="st0" d="M93.3,0c-7.1,0-12.8,5.7-12.8,12.8c0,4.3,2.1,8,5.3,10.3l3.4-3.4V6.9c0-0.4-0.1-0.6-0.4-0.7
+                    c-0.4-0.2-0.7-0.7-0.7-1.1c0-0.7,0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3c0,0.5-0.3,0.9-0.7,1.1c-0.2,0.1-0.4,0.3-0.4,0.6V20l0,0l-3.5,3.5
+                    c2,1.3,4.4,2,6.9,2c7.1,0,12.8-5.7,12.8-12.8C106.1,5.7,100.4,0,93.3,0z M88.6,8v10.5H88V8H88.6z M91.1,18.6h-0.6V8.1h0.6V18.6z
+                     M98.8,18.6c-0.5,0.2-1,0.2-1.6,0.2c-0.7,0-1.3-0.1-1.8-0.3c-0.4-0.2-0.9-0.4-1.1-0.9c-0.3-0.4-0.5-0.9-0.6-1.3
+                    c-0.1-0.6-0.2-1.1-0.2-1.8V5.2l1.9-0.3v3.3h4v1.6h-4v4.9c0,0.6,0,0.9,0.1,1.3c0,0.3,0.2,0.6,0.4,0.9c0.2,0.2,0.4,0.3,0.6,0.4
+                    c0.2,0,0.6,0.1,0.9,0.1c0.6,0,1,0,1.4-0.2c0.3-0.1,0.6-0.2,0.7-0.3l0.4,1.5C99.7,18.4,99.3,18.4,98.8,18.6z"></path>
+            </svg>
+                <span class="main-logo__text">
+                Поддержка сайтов
+            </span>
+            </a>
+        </div>
+        <div class="main-footer__col copyrighted">
+            <a href="#">
+                Политика обработки персональных данных
+            </a>
+            <a class="callback-link" href="#callback-modal">
+                <span class="callback-link__icon">
+                    <img src="images/callback-cat2.png" alt="cat">
+                    <img src="images/callback-cat1.png" alt="cat">
+                </span>
+                Обратная связь
+            </a>
+            <span>
+                &copy; 2013-2017 «ММИТ».
+            </span>
+        </div>
+    </div>
+    <div class="callback mfp-hide modal-popup" id="callback-modal">
+        <div class="modal-popup__title">
+            Обратная связь
+        </div>
+        <form action="#" class="callback-form">
+            <div class="form-item">
+                <label for="callback-name" class="form-label form-label_popup-form">Имя</label>
+                <input required type="text" placeholder="Ваше имя" name="form_text_3" id="callback-name">
+            </div>
+            <div class="form-item">
+                <label for="callback-phone" class="form-label form-label_popup-form">Телефон</label>
+                <input required type="text" class="input-phone" placeholder="Ваш телефон" name="form_text_4"
+                       id="callback-phone">
+            </div>
+            <div class="form-item">
+                <label for="callback-text" class="form-label form-label_popup-form">Комментарий</label>
+                <textarea id="callback-text" class="callback__comment" required name="form_textarea_5"></textarea>
+            </div>
+            <div class="form-item custom-checkbox">
+                <input type="checkbox" name="personal_agreement" required id="callback-agreement">
+                <label class="form-label" for="callback-agreement">
+                    Согласен на обработку персональных данных <a href="/soglashenie.pdf"
+                                                                 target="_blank">(соглашение)</a>
+                </label>
+            </div>
+            <div class="form-item__bottom">
+                <button type="submit" class="button button-green button-small">
+                    Связаться со мной
+                </button>
+            </div>
+        </form>
+    </div>
+</footer>
+<div class="preloder">
+    <svg class="lds-bluecat" width="150" height="150" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <g transform="rotate(74.7463 50 50)">
+            <animateTransform attributeName="transform" type="rotate" values="360 50 50;0 50 50" keyTimes="0;1"
+                              dur="1.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.5 0 0.5 1"
+                              begin="-0.19500000000000003s"></animateTransform>
+            <circle cx="50" cy="50" r="39.891" stroke="#9fe4ff" stroke-width="14.4" fill="none"
+                    stroke-dasharray="0 300">
+                <animate attributeName="stroke-dasharray" values="15 300;82.71203987927132 300;15 300"
+                         keyTimes="0;0.5;1" dur="1.3s" repeatCount="indefinite" calcMode="linear"
+                         keySplines="0 0.4 0.6 1;0.4 0 1 0.6" begin="-0.08970000000000002s"></animate>
+            </circle>
+            <circle cx="50" cy="50" r="39.891" stroke="#dbecf2" stroke-width="7.2" fill="none" stroke-dasharray="0 300">
+                <animate attributeName="stroke-dasharray" values="15 300;82.71203987927132 300;15 300"
+                         keyTimes="0;0.5;1" dur="1.3s" repeatCount="indefinite" calcMode="linear"
+                         keySplines="0 0.4 0.6 1;0.4 0 1 0.6" begin="-0.08970000000000002s"></animate>
+            </circle>
+            <circle cx="50" cy="50" r="32.771" stroke="#3280d8" stroke-width="1" fill="none" stroke-dasharray="0 300">
+                <animate attributeName="stroke-dasharray" values="15 300;67.94906768152214 300;15 300"
+                         keyTimes="0;0.5;1" dur="1.3s" repeatCount="indefinite" calcMode="linear"
+                         keySplines="0 0.4 0.6 1;0.4 0 1 0.6" begin="-0.08970000000000002s"></animate>
+            </circle>
+            <circle cx="50" cy="50" r="47.171" stroke="#3280d8" stroke-width="1" fill="none" stroke-dasharray="0 300">
+                <animate attributeName="stroke-dasharray" values="15 300;99.05083495206111 300;15 300"
+                         keyTimes="0;0.5;1" dur="1.3s" repeatCount="indefinite" calcMode="linear"
+                         keySplines="0 0.4 0.6 1;0.4 0 1 0.6" begin="-0.08970000000000002s"></animate>
+            </circle>
+        </g>
+
+        <g transform="rotate(173.078 50 50)">
+            <animateTransform attributeName="transform" type="rotate" values="360 50 50;0 50 50" keyTimes="0;1"
+                              dur="1.3s" repeatCount="indefinite" calcMode="spline"
+                              keySplines="0.5 0 0.5 1"></animateTransform>
+            <path fill="#9fe4ff" stroke="#3280d8"
+                  d="M97.2,50.1c0,6.1-1.2,12.2-3.5,17.9l-13.3-5.4c1.6-3.9,2.4-8.2,2.4-12.4"></path>
+            <path fill="#dbecf2"
+                  d="M93.5,49.9c0,1.2,0,2.7-0.1,3.9l-0.4,3.6c-0.4,2-2.3,3.3-4.1,2.8l-0.2-0.1c-1.8-0.5-3.1-2.3-2.7-3.9l0.4-3 c0.1-1,0.1-2.3,0.1-3.3"></path>
+            <path fill="#9fe4ff" stroke="#3280d8"
+                  d="M85.4,62.7c-0.2,0.7-0.5,1.4-0.8,2.1c-0.3,0.7-0.6,1.4-0.9,2c-0.6,1.1-2,1.4-3.2,0.8c-1.1-0.7-1.7-2-1.2-2.9 c0.3-0.6,0.5-1.2,0.8-1.8c0.2-0.6,0.6-1.2,0.7-1.8"></path>
+            <path fill="#9fe4ff" stroke="#3280d8"
+                  d="M94.5,65.8c-0.3,0.9-0.7,1.7-1,2.6c-0.4,0.9-0.7,1.7-1.1,2.5c-0.7,1.4-2.3,1.9-3.4,1.3h0 c-1.1-0.7-1.5-2.2-0.9-3.4c0.4-0.8,0.7-1.5,1-2.3c0.3-0.8,0.7-1.5,0.9-2.3"></path>
+        </g>
+        <g transform="rotate(74.7463 50 50)">
+            <animateTransform attributeName="transform" type="rotate" values="360 50 50;0 50 50" keyTimes="0;1"
+                              dur="1.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.5 0 0.5 1"
+                              begin="-0.19500000000000003s"></animateTransform>
+            <path fill="#dbecf2" stroke="#3280d8"
+                  d="M86.9,35.3l-6,2.4c-0.4-1.2-1.1-2.4-1.7-3.5c-0.2-0.5,0.3-1.1,0.9-1C82.3,33.8,84.8,34.4,86.9,35.3z"></path>
+            <path fill="#dbecf2" stroke="#3280d8"
+                  d="M87.1,35.3l6-2.4c-0.6-1.7-1.5-3.3-2.3-4.9c-0.3-0.7-1.2-0.6-1.4,0.1C88.8,30.6,88.2,33,87.1,35.3z"></path>
+            <path fill="#9fe4ff" stroke="#3280d8"
+                  d="M82.8,50.1c0-3.4-0.5-6.8-1.6-10c-0.2-0.8-0.4-1.5-0.3-2.3c0.1-0.8,0.4-1.6,0.7-2.4c0.7-1.5,1.9-3.1,3.7-4l0,0 c1.8-0.9,3.7-1.1,5.6-0.3c0.9,0.4,1.7,1,2.4,1.8c0.7,0.8,1.3,1.7,1.7,2.8c1.5,4.6,2.2,9.5,2.3,14.4"></path>
+            <path fill="#dbecf2"
+                  d="M86.3,50.2l0-0.9l-0.1-0.9l-0.1-1.9c0-0.9,0.2-1.7,0.7-2.3c0.5-0.7,1.3-1.2,2.3-1.4l0.3,0 c0.9-0.2,1.9,0,2.6,0.6c0.7,0.5,1.3,1.4,1.4,2.4l0.2,2.2l0.1,1.1l0,1.1"></path>
+            <path fill="#ff2d22"
+                  d="M93.2,34.6c0.1,0.4-0.3,0.8-0.9,1c-0.6,0.2-1.2,0.1-1.4-0.2c-0.1-0.3,0.3-0.8,0.9-1 C92.4,34.2,93,34.3,93.2,34.6z"></path>
+            <path fill="#ff2d22"
+                  d="M81.9,38.7c0.1,0.3,0.7,0.3,1.3,0.1c0.6-0.2,1-0.6,0.9-0.9c-0.1-0.3-0.7-0.3-1.3-0.1 C82.2,38,81.8,38.4,81.9,38.7z"></path>
+            <path fill="#3280d8"
+                  d="M88.5,36.8c0.1,0.3-0.2,0.7-0.6,0.8c-0.5,0.2-0.9,0-1.1-0.3c-0.1-0.3,0.2-0.7,0.6-0.8C87.9,36.3,88.4,36.4,88.5,36.8z"></path>
+            <path stroke="#3280d8"
+                  d="M85.9,38.9c0.2,0.6,0.8,0.9,1.4,0.7c0.6-0.2,0.9-0.9,0.6-2.1c0.3,1.2,1,1.7,1.6,1.5c0.6-0.2,0.9-0.8,0.8-1.4"></path>
+            <path fill="#9fe4ff" stroke="#3280d8"
+                  d="M86.8,42.3l0.4,2.2c0.1,0.4,0.1,0.7,0.2,1.1l0.1,1.1c0.1,1.2-0.9,2.3-2.2,2.3c-1.3,0-2.5-0.8-2.5-1.9l-0.1-1 c0-0.3-0.1-0.6-0.2-1l-0.3-1.9"></path>
+            <path fill="#9fe4ff" stroke="#3280d8"
+                  d="M96.2,40.3l0.5,2.7c0.1,0.5,0.2,0.9,0.2,1.4l0.1,1.4c0.1,1.5-0.9,2.8-2.2,2.9h0c-1.3,0-2.5-1.1-2.6-2.4 L92.1,45c0-0.4-0.1-0.8-0.2-1.2l-0.4-2.5"></path>
+            <path fill="#3280d8"
+                  d="M91.1,34.1c0.3,0.7,0,1.4-0.7,1.6c-0.6,0.2-1.3-0.1-1.6-0.7c-0.2-0.6,0-1.4,0.7-1.6C90.1,33.1,90.8,33.5,91.1,34.1z"></path>
+            <path fill="#3280d8"
+                  d="M85.5,36.3c0.2,0.6-0.1,1.2-0.7,1.5c-0.6,0.2-1.3,0-1.5-0.6C83,36.7,83.4,36,84,35.8C84.6,35.5,85.3,35.7,85.5,36.3z"></path>
+
+        </g>
+    </svg>
+</div>
+<script src="app/js/jquery-3.2.1.min.js"></script>
+<script src="app/js/jquery.validate.min.js"></script>
+<script src="app/js/slick.min.js"></script>
+<script src="app/js/jquery.magnific-popup.js"></script>
+<script src="app/js/musk.js"></script>
+<script src="app/js/jquery.gray.min.js"></script>
+<script src="app/js/jquery.viewportchecker.min.js"></script>
+<script src="app/js/tooltipster.bundle.min.js"></script>
+<script src="app/js/jquery.sticky.js"></script>
+<script src="app/js/jquery.mask.min.js"></script>
+<script src="app/js/select2.min.js"></script>
+<script src="app/js/datepicker.min.js"></script>
+<script src="app/js/main.js"></script>
+</body>
+</html>

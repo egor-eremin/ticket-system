@@ -533,6 +533,13 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             thisParent.slideUp(300);
         });
     })();
+    // (function initWelcomSlider() {
+    //     $('#init-welcome-slider').slick({
+    //         slidesToShow: 1,
+    //         slidesToScroll: 1,
+    //         fade: true,
+    //     });
+    // })();
 });
 BX.ready(function(){
     loader = BX('preloder');

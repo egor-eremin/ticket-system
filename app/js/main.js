@@ -529,17 +529,55 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
     (function deleteTabbedTime() {
         $(document).on('click', '.tabbed-time__delete', function () {
            var thisParent = $(this).parents('.tabbed-time__item');
-           console.log('sis');
             thisParent.slideUp(300);
         });
     })();
-    // (function initWelcomSlider() {
-    //     $('#init-welcome-slider').slick({
-    //         slidesToShow: 1,
-    //         slidesToScroll: 1,
-    //         fade: true,
-    //     });
-    // })();
+    (function initWelcomSlider() {
+        $('#init-welcome-slider').on('init', function(e, slick) {
+            $('.main-block').addClass('animation-slide-1');
+        });
+        $('#init-welcome-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            asNavFor: '#init-number-slider',
+            adaptiveHeight: true,
+            prevArrow: '<button type="button" class="slick-prev welcome-slider__prev"><img src="images/welcome-prev.png" alt="prev"></button>',
+            nextArrow: '<button type="button" class="slick-next welcome-slider__next"><img src="images/welcome-next.png" alt="next"></button>'
+        });
+        $(".welcome-text .slick-arrow").wrapAll("<div class='slick-button-wrapper'></div>");
+        $('.slick-button-wrapper').appendTo($('.welcome-slider'));
+    })();
+    (function initNumberSlider() {
+        $('#init-number-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            arrows: false
+        });
+        $('#init-number-slider').appendTo('.slick-button-wrapper');
+    })();
+
+
+    (function addAnimationWelcomSlider() {
+        $('#init-welcome-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            if (nextSlide == 0) {
+                $('.main-block').addClass('animation-slide-1');
+            }
+            if (nextSlide == 1) {
+                $('.header').addClass('animation-slide-2');
+            }
+        });
+
+        $('#init-welcome-slider').on('beforeChange', function(event, slick, currentSlide) {
+            if (currentSlide == 0) {
+                $('.main-block').removeClass('animation-slide-1');
+            }
+            if (currentSlide == 1) {
+                $('.header').removeClass('animation-slide-2');
+            }
+        });
+    })();
 });
 BX.ready(function(){
     loader = BX('preloder');

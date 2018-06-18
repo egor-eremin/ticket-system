@@ -4195,3 +4195,22 @@ input[type=range]::-moz-range-track {
 .welcome-slider .slick-disabled {
     opacity: .5 ;
 }
+.fixed-scroll {
+    overflow-y: scroll;
+}
+.welcome-slider-active .hedaer-main,
+.welcome-slider-active .main-footer {
+    position: relative;
+}
+.welcome-slider-active .hedaer-main::before,
+.welcome-slider-active .main-footer::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(197,234,255,.7);
+    z-index: 20;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

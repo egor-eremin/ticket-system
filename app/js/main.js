@@ -534,7 +534,8 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
     })();
     (function initWelcomSlider() {
         $('#init-welcome-slider').on('init', function(e, slick) {
-            $('.main-block').addClass('animation-slide-1');
+            $('.main-block').addClass('animation-slide-1 no-active');
+            $('body').addClass('fixed-scroll welcome-slider-active');
         });
         $('#init-welcome-slider').slick({
             slidesToShow: 1,
@@ -598,6 +599,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             $('.welcome-text').hide();
             $('.main-block').removeClass('no-active');
             $('.main-footer').removeClass('animation-slide-4');
+            $('body').removeClass('fixed-scroll welcome-slider-active');
         });
     })();
 });

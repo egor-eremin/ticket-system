@@ -4158,3 +4158,40 @@ input[type=range]::-moz-range-track {
     margin-bottom: -11px;
     margin-left: 131px;
 }
+.animation-slide-3 .main-nav__list {
+    position: relative;
+}
+.animation-slide-3 .main-nav__list::before {
+    content: "";
+    width: 72px;
+    height: 118px;
+    display: block;
+    background: url("../images/slide3-arrow.png") no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: 130px;
+    transform: translate(-50%, 100%);
+    z-index: 100;
+    margin-bottom: -40px;
+}
+.animation-slide-4 .callback-link {
+    position: relative;
+}
+.animation-slide-4 .callback-link::before {
+    content: "";
+    width: 103px;
+    height: 88px;
+    display: block;
+    background: url("../images/slide4-arrow.png") no-repeat;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 100;
+    margin-top: -18px;
+    margin-left: -117px;
+}
+.welcome-slider .slick-disabled {
+    opacity: .5 ;
+}

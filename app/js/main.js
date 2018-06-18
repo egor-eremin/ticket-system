@@ -540,6 +540,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
+            infinite: false,
             asNavFor: '#init-number-slider',
             adaptiveHeight: true,
             prevArrow: '<button type="button" class="slick-prev welcome-slider__prev"><img src="images/welcome-prev.png" alt="prev"></button>',
@@ -552,6 +553,7 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
         $('#init-number-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
+            infinite: false,
             fade: true,
             arrows: false
         });
@@ -567,6 +569,12 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             if (nextSlide == 1) {
                 $('.header').addClass('animation-slide-2');
             }
+            if (nextSlide == 2) {
+                $('.header').addClass('animation-slide-3');
+            }
+            if (nextSlide == 3) {
+                $('.main-footer').addClass('animation-slide-4');
+            }
         });
 
         $('#init-welcome-slider').on('beforeChange', function(event, slick, currentSlide) {
@@ -576,6 +584,20 @@ function CustomSelect(main_selector,select_placeholder,dr_parent) {
             if (currentSlide == 1) {
                 $('.header').removeClass('animation-slide-2');
             }
+            if (currentSlide == 2) {
+                $('.header').removeClass('animation-slide-3');
+            }
+            if (currentSlide == 3) {
+                $('.main-footer').removeClass('animation-slide-4');
+            }
+        });
+    })();
+    
+    (function hideWelcomSlider() {
+        $('#start-working').on('click', function () {
+            $('.welcome-text').hide();
+            $('.main-block').removeClass('no-active');
+            $('.main-footer').removeClass('animation-slide-4');
         });
     })();
 });
